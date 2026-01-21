@@ -1,7 +1,8 @@
 import AppLayout from "./layout/AppLayout.jsx";
 import RaceCard from "./components/NextRace/RaceCard.jsx";
 import CountdownCard from "./components/Countdown/CountdownCard.jsx";
-
+import DriverStandings from "./components/DriverStandings/Standings.jsx";
+import "./components/DriverStandings/DriverStandings.css";
 function App() {
   return (
     <>
@@ -13,6 +14,7 @@ function App() {
         date="12 Feb 2026"
         />
         <CountdownCard />
+        <DriverStandings />
       </AppLayout>
     </>
   );

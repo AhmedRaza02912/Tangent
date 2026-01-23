@@ -52,15 +52,7 @@ tbody td{
     font-size: 14px;
 }
 
-.driver-name{
-    display: flex;
-    flex-direction: column;
-}
-
-.driver-name span{
-    font-size: 11px;
-    color: #9ca3ef
-} */
+*/
 
 
 .driver-standings-card {
@@ -69,26 +61,10 @@ tbody td{
   border-radius: 12px;
   color: white;
 }
-
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+.driver-name{
+    display: flex;
+    flex-direction: column;
 }
-
-.tabs button {
-  background: #1f2937;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.tabs .active {
-  background: #ef4444;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;

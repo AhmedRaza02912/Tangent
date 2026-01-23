@@ -1,0 +1,25 @@
+
+
+.constructor-standings-card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+}
+.constructor-name{
+    display: flex;
+    flex-direction: column;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+thead {
+  border-bottom: 1px solid #374151;
+}

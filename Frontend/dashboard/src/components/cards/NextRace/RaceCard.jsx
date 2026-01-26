@@ -1,17 +1,27 @@
+import CountdownCard from "../Countdown/CountdownCard";
+// import "./RaceCard.css"; // Ensure this file doesn't override inline styles below
+
 function RaceCard() {
   return (
     <div style={styles.card}>
-      {/* Overlay */}
+      {/* Background Image Overlay */}
       <div style={styles.overlay}></div>
-      
-      <div style={styles.text}>
-        <h3 style={styles.text}>Next Race</h3>
-        <h2 style={styles.text}>British Grand Prix</h2>
-        <p style={styles.text}>SilverStone Circuit</p>
-        <p style={styles.text}>July 14, 2024</p>
+
+      {/* Top Section: Title and Red Badge */}
+      <div style={styles.topSection}>
+        <div style={styles.text}>
+          <h3 style={styles.subHeader}>Next Race:</h3>
+          <h2 style={styles.header}>British Grand Prix</h2>
+        </div>
+        
+        {/* Red Badge at Top Right */}
+        <div style={styles.redBadge}>Sync with Calendar</div>
       </div>
 
-      <button style={styles.button}>Add to Calendar</button>
+      {/* Bottom Section: The Countdown Component */}
+      <div style={styles.countdownWrapper}>
+        <CountdownCard />
+      </div>
     </div>
   );
 }
@@ -19,38 +29,62 @@ function RaceCard() {
 const styles = {
   card: {
     position: "relative",
-    backgroundImage: "url('/images/silverstone.JPG')",
+    backgroundImage: "url('/images/silverstone.JPG')", 
     backgroundSize: "cover",
     backgroundPosition: "center",
-    border: "1px solid #1e293b",
-    borderRadius: "12px",
-    padding: "20px",
-    width: "500px",
+    borderRadius: "16px",
+    padding: "30px",
+    width: "500px", 
+    height: "200px", 
     color: "white",
     overflow: "hidden",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    fontFamily: "'Segoe UI', sans-serif",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
   },
-
   overlay: {
     position: "absolute",
     inset: 0,
-    background: "rgba(0, 0, 0, 0.55)",
+    background: "linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%)",
+    zIndex: 0,
   },
-
-  text: {
+  topSection: {
     position: "relative",
     zIndex: 1,
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    width: "100%",
   },
-
-  button: {
-    marginTop: "12px",
-    padding: "10px",
-    width: "30%",
-    backgroundColor: "rgba(255, 255, 255, 0.2)",
-    backdropFilter: "blur(2px)",
+  text: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "4px",
+  },
+  subHeader: {
+    fontSize: "18px",
+    fontWeight: "400",
+    opacity: 0.9,
+    margin: 0,
+  },
+  header: {
+    fontSize: "42px",
+    fontWeight: "700",
+    margin: 0,
+    lineHeight: "1.1",
+  },
+  redBadge: {
+    backgroundColor: "#ef4444", // Red color
     color: "white",
-    border: "none",
+    padding: "6px 16px",
     borderRadius: "8px",
-    cursor: "pointer",
+    fontWeight: "bold",
+    fontSize: "11px",
+    boxShadow: "0 2px 10px rgba(239, 68, 68, 0.3)",
+  },
+  countdownWrapper: {
     position: "relative",
     zIndex: 1,
   },

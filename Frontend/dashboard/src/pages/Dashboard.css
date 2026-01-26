@@ -1,0 +1,16 @@
+.dashboard {
+  min-height: 100vh;
+  background-color:rgba(6, 1, 38, 0.669);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.next-race {
+  grid-column: 1 / -1;
+}

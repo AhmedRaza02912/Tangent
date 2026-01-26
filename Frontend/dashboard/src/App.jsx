@@ -1,12 +1,8 @@
-import DashboardLayout from "./layout/DashboardLayout.jsx";
-import F1Dashboard from "./pages/F1Dashboard.jsx";
+import Dashboard from "./pages/F1Dashboard";
 
-function App() {
-  return (
-    <DashboardLayout>
-      <F1Dashboard />
-    </DashboardLayout>
+function App(){
+  return(
+    <Dashboard />
   );
 }
-
 export default App;

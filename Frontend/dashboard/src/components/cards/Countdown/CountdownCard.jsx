@@ -67,13 +67,14 @@ const styles = {
     alignItems: "center",
   },
   number: {
-    fontSize: "20px", // Large numbers
+    fontSize: "20px", 
     fontWeight: "600",
     lineHeight: "1",
-    fontVariantNumeric: "tabular-nums", // Keeps numbers from shifting width
+    fontVariantNumeric: "tabular-nums",
   },
   label: {
     fontSize: "12px",
+    fontWeight: "300",
     opacity: 0.6,
     letterSpacing: "1px",
     marginTop: "5px",
@@ -82,7 +83,7 @@ const styles = {
   separator: {
     fontSize: "28px",
     fontWeight: "400",
-    marginTop: "-15px", // Adjust vertical alignment of colon
+    marginTop: "-15px", 
     opacity: 0.8,
   },
 };

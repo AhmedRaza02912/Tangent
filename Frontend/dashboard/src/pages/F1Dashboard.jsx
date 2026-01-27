@@ -2,6 +2,7 @@ import TopBar from "../components/TopBar/top.jsx";
 import RaceCard from "../components/cards/NextRace/RaceCard.jsx";
 import DriverStandings from "../components/cards/DriverStandings/Standings.jsx";
 import ConstructorStandings from "../components/cards/ConstructorStandings/Standings.jsx";
+import UpcomingEvents from "../components/cards/UpcomingRaces/Races.jsx";
 
 import "./Dashboard.css";
 
@@ -19,6 +20,10 @@ export default function Dashboard() {
 
                 <div className="driver-standings">
                     <DriverStandings />
+                </div>
+
+                <div className="upcoming-races">
+                    <UpcomingEvents />
                 </div>
             </div>
         </div>

@@ -15,9 +15,6 @@
   font-family: 'Segoe UI', sans-serif;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-
-/* In CSS, we can nest using space if structure allows, 
-   but usually we just target the class directly */
 .overlay {
   position: absolute;
   inset: 0;
@@ -41,15 +38,15 @@
 }
 
 .subHeader {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 200;
   opacity: 0.9;
   margin: 0;
 }
 
 .header {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 200;
   margin: 0;
   line-height: 1.1;
 }

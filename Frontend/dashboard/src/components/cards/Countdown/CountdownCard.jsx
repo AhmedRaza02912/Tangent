@@ -49,9 +49,8 @@ function TimeGroup({ value, label }) {
 
 const styles = {
   glassContainer: {
-    // Glassmorphism effect
-    background: "rgba(23, 23, 23, 0.6)", // Dark transparent background
-    backdropFilter: "blur(12px)", // Blurs the image behind it
+    background: "rgba(23, 23, 23, 0.6)", 
+    backdropFilter: "blur(12px)", 
     WebkitBackdropFilter: "blur(12px)",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     borderRadius: "12px",
@@ -68,13 +67,13 @@ const styles = {
     alignItems: "center",
   },
   number: {
-    fontSize: "32px", // Large numbers
+    fontSize: "20px", // Large numbers
     fontWeight: "600",
     lineHeight: "1",
     fontVariantNumeric: "tabular-nums", // Keeps numbers from shifting width
   },
   label: {
-    fontSize: "10px",
+    fontSize: "12px",
     opacity: 0.6,
     letterSpacing: "1px",
     marginTop: "5px",

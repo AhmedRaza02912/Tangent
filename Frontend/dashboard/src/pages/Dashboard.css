@@ -8,32 +8,34 @@
 
 /* New dashboard layout styles */
 .dashboard-main-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  grid-template-rows: auto auto auto;
   gap: 32px;
 }
 
 .dashboard-top-row {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
+  gap: 25px;
   margin-bottom: 8px;
 }
 .dashboard-next-race {
-  flex: 2;
-  min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
 }
 .dashboard-latest-news {
-  flex: 1.2;
-  min-width: 280px;
-  max-width: 400px;
+  grid-column: 2;
+  grid-row: 1/ span 2;
+  background: rgba(20, 20, 40, 0.7);
+  border-radius: 16px;
+  padding: 16px 12px;
+  overflow-y: auto;
 }
 
 .dashboard-middle-row {
   display: flex;
-  flex-direction: row;
+  grid-column: 1;
+  grid-row: 2;
   gap: 32px;
-  min-height: 320px;
 }
 .dashboard-driver-standings,
 .dashboard-constructor-standings {
@@ -45,7 +47,7 @@
   overflow-y: auto;
   max-height: 340px;
 }
-.dashboard-head-to-head {
+.dashboard-constructor-standings {
   flex: 1;
   min-width: 0;
   background: rgba(20, 20, 40, 0.7);
@@ -55,11 +57,9 @@
 }
 
 .dashboard-bottom-row {
-  margin-top: 8px;
-  background: rgba(20, 20, 40, 0.7);
-  border-radius: 12px;
-  padding: 20px 16px;
-  min-height: 120px;
+  grid-column: 1/ span 2;
+  grid-row: 3;
+
 }
 
 .scrollable {

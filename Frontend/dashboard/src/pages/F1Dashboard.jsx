@@ -28,14 +28,10 @@ export default function Dashboard() {
     return (
         <div className="dashboard">
             <div className="dashboard-main-grid">
-                {/* Top Row: Next Race + Countdown | Latest News */}
                 <div className="dashboard-top-row">
                     <div className="dashboard-next-race">
                         <RaceCard />
-                    </div>
-                    <div className="dashboard-latest-news">
-                        <LatestNews />
-                    </div>
+                    </div>                  
                 </div>
 
                 {/* Middle Row: Standings */}
@@ -46,12 +42,7 @@ export default function Dashboard() {
                     <div className="dashboard-constructor-standings scrollable">
                         <ConstructorStandings />
                     </div>
-                    <div className="dashboard-head-to-head">
-                        {/* Head-to-Head or continued news can go here */}
-                    </div>
                 </div>
-
-                {/* Bottom Row: Upcoming Events */}
                 <div className="dashboard-bottom-row">
                     <UpcomingEvents />
                 </div>

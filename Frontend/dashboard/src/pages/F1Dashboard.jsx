@@ -32,6 +32,7 @@ export default function Dashboard() {
                     <div className="dashboard-next-race">
                         <RaceCard />
                     </div>                  
+                                      
                 </div>
 
                 {/* Middle Row: Standings */}

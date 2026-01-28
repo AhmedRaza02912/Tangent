@@ -1,28 +1,10 @@
-
 import TopBar from "../components/TopBar/top.jsx";
 import RaceCard from "../components/cards/NextRace/RaceCard.jsx";
 import DriverStandings from "../components/cards/DriverStandings/Standings.jsx";
 import ConstructorStandings from "../components/cards/ConstructorStandings/Standings.jsx";
+import UpcomingEvents from "../components/cards/UpcomingEvents/Upcoming.jsx";
+import LatestNews from "../components/cards/LatestNewsCard/NewsCard.jsx";
 import "./Dashboard.css";
-
-// Placeholder for Latest News and Upcoming Events
-function LatestNews() {
-    return (
-        <div className="latest-news-placeholder">
-            <div style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: 8 }}>Latest News</div>
-            <div style={{ color: "#888" }}>(Coming soon)</div>
-        </div>
-    );
-}
-
-function UpcomingEvents() {
-    return (
-        <div className="upcoming-events-placeholder">
-            <div style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: 8 }}>Upcoming Events</div>
-            <div style={{ color: "#888" }}>(Coming soon)</div>
-        </div>
-    );
-}
 
 export default function Dashboard() {
     return (
@@ -31,10 +13,11 @@ export default function Dashboard() {
                 <div className="dashboard-top-row">
                     <div className="dashboard-next-race">
                         <RaceCard />
-                    </div>                  
-                                      
+                    </div>
                 </div>
-
+                <div className="dashboard-latest-news">
+                    <LatestNews />
+                </div>
                 {/* Middle Row: Standings */}
                 <div className="dashboard-middle-row">
                     <div className="dashboard-driver-standings scrollable">

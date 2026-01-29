@@ -1,12 +1,16 @@
 .constructor-standings-card {
   background: #111827;
-  padding: 20px;
+  padding-top: 5px;
   border-radius: 12px;
   color: white;
 }
 .constructor-name{
     display: flex;
     flex-direction: column;
+}
+.header{
+  font-size: 18px;
+  text-align: center;
 }
 table {
   width: 100%;
@@ -19,5 +23,5 @@ th, td {
 }
 
 thead {
-  border-bottom: 1px solid #374151;
+  border-bottom: 1px solid #111827;
 }

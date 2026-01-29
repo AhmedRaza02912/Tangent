@@ -1,13 +1,18 @@
 .driver-standings-card {
-  /* background: rgba(20, 20, 40, 0.75); */
+  display: flex;
+  flex-direction: column;
+  background: transparent;
   border-radius: 14px;
-  padding: 10px;
-  width: 100%;
+  padding: 6px 0px;
+  height: 100%;
+  
 }
-
 .driver-standings-card h3 {
+  font-size: 20px;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  color: #e5e9ff;
+  flex-shrink: 0;
 }
 table {
   width: 100%;
@@ -17,62 +22,69 @@ table {
 }
 
 .table-wrapper {
+  flex: 1;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #232347 #18182b;
-  border-radius: 0 0 12px 12px;
-}
+  position: relative;
 
+  /* smooth scrolling */
+  scroll-behavior: smooth;
+
+  /* scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(210, 245, 12, 0.35) transparent;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12px,
+    black calc(100% - 12px),
+    transparent
+  );
+}
 .table-wrapper::-webkit-scrollbar {
-  width: 8px;
-  background: #18182b;
-  border-radius: 0 0 12px 12px;
+  width: 6px;
 }
-.table-wrapper::-webkit-scrollbar-thumb {
-  background: #232347;
-  border-radius: 8px;
-}
-.table-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #34345c;
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
 }
 thead {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: rgba(20, 20, 40, 0.95);
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,40,0.95),
+    rgba(8, 8, 35, 0.75)
+  );
+  backdrop-filter: blur(6px);
 }
-thead {
-  top: 0;
-  background: rgba(20, 20, 40, 0.95);
-}
-
 th {
   text-align: left;
   padding: 8px;
   color: #cbd5f5;
 }
-
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+}
 td {
   padding: 9px 6px;
 }
-tr:not(:nth-child(odd)){
-  background-color: rgba(11, 34, 46, 0.628);
-  border-radius: 10px;
+tbody tr td {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .driver-cell {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-
 .driver-cell img {
-  transform: scale(1.6);
+  width: 32px;
+  height: 32px;
   object-fit: cover;
-  object-position: top;
-  width: 40px;
-  height: 30px;
-  background-color: rgba(11, 34, 46, 0.628);
-  border-radius: 55%;
+  object-position: center top;
+  border-radius: 50%;
 }
 
 .driver-cell span {

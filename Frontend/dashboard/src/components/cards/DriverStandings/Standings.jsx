@@ -4,7 +4,7 @@ const mockDrivers = [
   {
     position: 1,
     name: "Fernando Alonso",
-    image: "/images/fernando.avif",
+    image: "/images/fernando.webp",
     wins: 38,
     poles: 22,
     dnfs: 0,
@@ -13,7 +13,7 @@ const mockDrivers = [
   {
     position: 2,
     name: "Lewis Hamilton",
-    image: "/images/hamilton.avif",
+    image: "/images/lewis.webp",
     wins: 20,
     poles: 18,
     dnfs: 5,
@@ -22,7 +22,7 @@ const mockDrivers = [
     {
     position: 3,
     name: "Max Verstappen",
-    image: "/images/verstappen.avif",
+    image: "/images/max.webp",
     wins: 38,
     poles: 30,
     dnfs: 0,
@@ -31,7 +31,7 @@ const mockDrivers = [
   {
     position: 4,
     name: "Charles Leclerc",
-    image: "/images/leclerc.avif",
+    image: "/images/charles.webp",
     wins: 20,
     poles: 12,
     dnfs: 5,
@@ -40,7 +40,7 @@ const mockDrivers = [
     {
     position: 5,
     name: "Oscar Piastri",
-    image: "/images/piastri.avif",
+    image: "/images/oscar.webp",
     wins: 38,
     poles: 5,
     dnfs: 0,
@@ -49,7 +49,7 @@ const mockDrivers = [
   {
     position: 6,
     name: "George Russell",
-    image: "/images/russell.avif",
+    image: "/images/george.webp",
     wins: 20,
     poles: 7,
     dnfs: 5,
@@ -61,7 +61,6 @@ export default function DriverStandings() {
   return (
     <div className="driver-standings-card">
       <h3>Driver Standings</h3>
-
       <div className="table-wrapper">
         <table>
           <thead>

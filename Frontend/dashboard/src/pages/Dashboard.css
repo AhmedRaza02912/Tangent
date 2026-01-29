@@ -44,7 +44,6 @@
   background: rgba(20, 20, 40, 0.7);
   border-radius: 12px;
   padding: 16px 12px;
-  overflow-y: auto;
   max-height: 340px;
 }
 .dashboard-constructor-standings {

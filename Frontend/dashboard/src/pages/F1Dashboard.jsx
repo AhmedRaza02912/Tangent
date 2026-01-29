@@ -20,10 +20,12 @@ export default function Dashboard() {
                 </div>
                 {/* Middle Row: Standings */}
                 <div className="dashboard-middle-row">
-                    <div className="dashboard-driver-standings scrollable">
+                    {/*Added scrollable on my components here. Kept debugging for 
+                    a long time*/}
+                    <div className="dashboard-driver-standings"> 
                         <DriverStandings />
                     </div>
-                    <div className="dashboard-constructor-standings scrollable">
+                    <div className="dashboard-constructor-standings">
                         <ConstructorStandings />
                     </div>
                 </div>

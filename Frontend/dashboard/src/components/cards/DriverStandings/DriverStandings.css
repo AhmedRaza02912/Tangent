@@ -1,23 +1,99 @@
 .driver-standings-card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 14px;
+  padding: 6px 0px;
+  height: 100%;
+  
 }
-.driver-name{
-    display: flex;
-    flex-direction: column;
+.driver-standings-card h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #e5e9ff;
+  flex-shrink: 0;
 }
 table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 13.5px;
+  position: relative;
 }
 
-th, td {
-  padding: 10px;
-  text-align: left;
-}
+.table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
 
+  /* smooth scrolling */
+  scroll-behavior: smooth;
+
+  /* scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(210, 245, 12, 0.35) transparent;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12px,
+    black calc(100% - 12px),
+    transparent
+  );
+}
+.table-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
 thead {
-  border-bottom: 1px solid #374151;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,40,0.95),
+    rgba(8, 8, 35, 0.75)
+  );
+  backdrop-filter: blur(6px);
 }
+th {
+  text-align: left;
+  padding: 8px;
+  color: #cbd5f5;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+td {
+  padding: 9px 6px;
+}
+tbody tr td {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.driver-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.driver-cell img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+}
+
+.driver-cell span {
+  width: 20px;
+  font-size: 10px;
+  opacity: 1.0;
+}
+
+.points {
+  font-weight: bold;
+}
+

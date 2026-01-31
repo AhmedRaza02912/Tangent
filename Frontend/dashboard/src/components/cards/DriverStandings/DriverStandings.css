@@ -72,7 +72,7 @@ td {
   padding: 9px 6px;
 }
 tbody tr td {
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .driver-cell {
   display: flex;

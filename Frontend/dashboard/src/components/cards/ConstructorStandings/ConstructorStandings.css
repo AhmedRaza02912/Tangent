@@ -1,27 +1,96 @@
 .constructor-standings-card {
-  background: #111827;
-  padding-top: 5px;
-  border-radius: 12px;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 14px;
+  padding: 6px 0px;
+  height: 100%;
 }
-.constructor-name{
-    display: flex;
-    flex-direction: column;
-}
-.header{
-  font-size: 18px;
+
+.constructor-standings-card h3 {
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 10px;
+  color: #e5e9ff;
+  flex-shrink: 0;
 }
-table {
+
+/* Table base */
+.constructor-standings-card table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 13.5px;
+}
+.constructor-table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(210, 245, 12, 0.35) transparent;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12px,
+    black calc(100% - 12px),
+    transparent
+  );
 }
 
-th, td {
-  padding: 10px;
+.constructor-table-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.constructor-table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Sticky header */
+.constructor-standings-card thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(20,20,40,0.95),
+    rgba(8, 8, 35, 0.75)
+  );
+  backdrop-filter: blur(6px);
+}
+
+.constructor-standings-card th {
   text-align: left;
+  padding: 8px;
+  color: #cbd5f5;
 }
 
-thead {
-  border-bottom: 1px solid #111827;
+/* Rows */
+.constructor-standings-card td {
+  padding: 9px 6px;
+}
+
+.constructor-standings-card tbody tr {
+  transition: background 0.25s ease;
+}
+
+.constructor-standings-card tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.constructor-standings-card tbody tr td {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.constructor-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.constructor-cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 45%;
+}
+.constructor-points {
+  font-weight: bold;
 }

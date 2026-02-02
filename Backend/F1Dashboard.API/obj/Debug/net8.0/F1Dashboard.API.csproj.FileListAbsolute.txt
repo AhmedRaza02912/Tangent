@@ -1,0 +1,108 @@
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\appsettings.Development.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\appsettings.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.staticwebassets.endpoints.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.exe
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.deps.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.runtimeconfig.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.pdb
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.csproj.AssemblyReference.cache
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.AssemblyInfoInputs.cache
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.AssemblyInfo.cs
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.csproj.CoreCompileInputs.cache
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\scopedcss\bundle\F1Dashboard.API.styles.css
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.development.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashbo.46FCCBA5.Up2Date
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\refint\F1Dashboard.API.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.pdb
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.genruntimeconfig.cache
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\ref\F1Dashboard.API.dll
+D:\Cui work\Programs\C#\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.staticwebassets.runtime.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\appsettings.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.staticwebassets.endpoints.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.staticwebassets.runtime.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.exe
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.deps.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.runtimeconfig.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.pdb
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.AssemblyInfoInputs.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.AssemblyInfo.cs
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.sourcelink.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\scopedcss\bundle\F1Dashboard.API.styles.css
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashbo.46FCCBA5.Up2Date
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\refint\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.pdb
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.genruntimeconfig.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\F1Dashboard.API\obj\Debug\net8.0\ref\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\appsettings.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.staticwebassets.endpoints.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.staticwebassets.runtime.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.exe
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.deps.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.runtimeconfig.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\F1Dashboard.API.pdb
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.AssemblyInfoInputs.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.AssemblyInfo.cs
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.sourcelink.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\scopedcss\bundle\F1Dashboard.API.styles.css
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashbo.46FCCBA5.Up2Date
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\refint\F1Dashboard.API.dll
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.pdb
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\F1Dashboard.API.genruntimeconfig.cache
+C:\Users\Hp\Desktop\Tangent\Backend\F1Dashboard.API\obj\Debug\net8.0\ref\F1Dashboard.API.dll

@@ -29,7 +29,7 @@ const mockTeams = [
     wins: 0,
     points: 144,
   },
-    {
+  {
     position: 5,
     name: "Racing Point",
     image: "./images/Teams/racing point.png",
@@ -57,21 +57,21 @@ const mockTeams = [
     wins: 0,
     points: 36,
   },
-    {
+  {
     position: 9,
     name: "Williams",
     image: "./images/Teams/williams.png",
     wins: 0,
     points: 32,
   },
-    {
+  {
     position: 10,
     name: "Renault",
     image: "./images/Teams/renault.png",
     wins: 0,
     points: 15,
   },
-  
+
 ];
 
 export default function ConstructorStandings() {

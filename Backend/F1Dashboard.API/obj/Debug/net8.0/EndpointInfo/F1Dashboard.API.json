@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "F1Dashboard.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/f1/ping": {
+      "get": {
+        "tags": [
+          "F1"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/f1/drivers/standings": {
+      "get": {
+        "tags": [
+          "F1"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

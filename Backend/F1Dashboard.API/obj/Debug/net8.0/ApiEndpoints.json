@@ -1,0 +1,22 @@
+[
+  {
+    "ContainingType": "F1Dashboard.API.Controllers.F1Controller",
+    "Method": "GetDriverStandings",
+    "RelativePath": "api/f1/drivers/standings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "F1Dashboard.API.Controllers.F1Controller",
+    "Method": "Ping",
+    "RelativePath": "api/f1/ping",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

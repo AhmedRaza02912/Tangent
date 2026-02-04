@@ -14,6 +14,11 @@ export default function DriverStandings() {
         if (!res.ok) throw new Error("Failed to fetch standings");
         return res.json();
       })
+      .then(data => {
+        console.log('Data received:', data);
+        setDrivers(data);
+        setLoading(false);
+      })
       .catch(err => {
         console.error('Error:', err);
         setError(err.message);

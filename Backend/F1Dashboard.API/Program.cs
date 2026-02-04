@@ -6,15 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers()
-
 .AddJsonOptions(options =>
 {
-    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; 
 });
-{/*This camelCase caused me lots of problems*/}
+
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<DriverService>();
 builder.Services.AddHttpClient<ErgastClient>();
 builder.Services.AddCors(options =>
@@ -29,13 +27,6 @@ builder.Services.AddCors(options =>
         });
 });
 var app = builder.Build();
-
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 
 app.UseHttpsRedirection();

@@ -4,28 +4,21 @@ using F1Dashboard.Api.Services;
 namespace F1Dashboard.API.Controllers
 {
     [ApiController]
-    [Route("api/f1")]
+    [Route("api/f1/drivers")]
     public class F1Controller : ControllerBase
     {
-        private readonly DriverService _driverService;
+        private readonly DriverService _service;
 
-        public F1Controller(DriverService driverService)
+        public F1Controller(DriverService service)
         {
-            _driverService = driverService;
+            _service = service;
         }
 
-        [HttpGet("ping")]
-        public IActionResult Ping()
+        [HttpGet("standings")]
+        public async Task<IActionResult> GetStandings()
         {
-            return Ok("F1 API is running 🚀");
-        }
-
-        [HttpGet("drivers/standings")]
-        public IActionResult GetDriverStandings()
-        {
-            var drivers = _driverService.GetDriverStandings();
+            var drivers = await _service.GetDriverStandingsAsync();
             return Ok(drivers);
         }
-
     }
 }

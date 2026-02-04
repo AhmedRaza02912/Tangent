@@ -16,20 +16,31 @@ import stroll from "../assets/Drivers/stroll.PNG";
 import tsunoda from "../assets/Drivers/tsunoda.PNG";
 
 export const driverImages = {
-    max,
-    hamilton,
-    leclerc,
-    alonso,
-    antonelli,
-    bearman,
-    gasly,
-    hadjar,
-    lawson,
-    norris,
-    ocon,
-    piastri,
-    russell,
-    stroll,
-    tsunoda,
-    albon
+    "max_verstappen": max,  // There were mismatches between the file names and imagekeys
+    "hamilton": hamilton,
+    "leclerc": leclerc,
+    "alonso": alonso,
+    "antonelli": antonelli,
+    "bearman": bearman,
+    "gasly": gasly,
+    "hadjar": hadjar,
+    "lawson": lawson,
+    "norris": norris,
+    "ocon": ocon,
+    "piastri": piastri,
+    "russell": russell,
+    "stroll": stroll,
+    "tsunoda": tsunoda,
+    "albon": albon,
+    // Drivers that don't have images for yet:
+    "sainz": null,
+    "perez": null,
+    "hulkenberg": null,
+    "kevin_magnussen": null,
+    "ricciardo": null,
+    "colapinto": null,
+    "zhou": null,
+    "bottas": null,
+    "sargeant": null,
+    "doohan": null
 }

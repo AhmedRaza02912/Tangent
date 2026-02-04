@@ -3,7 +3,7 @@
     public class DriverStandingDto
     {
         public int Position { get; set; }
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         public int Wins { get; set; }
 

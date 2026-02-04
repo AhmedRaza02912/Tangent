@@ -1,14 +1,22 @@
+using System.Text.Json;
+using F1Dashboard.Api.Infrastructure.Ergast;
 using F1Dashboard.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
 
+.AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+});
+{/*This camelCase caused me lots of problems*/}
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<DriverService>();
+builder.Services.AddHttpClient<ErgastClient>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact",

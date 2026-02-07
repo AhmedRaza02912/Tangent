@@ -22,7 +22,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
             );
         }
 
-        public async Task<string> GetRaceResultsRawAsync(int year = 2024)
+        public async Task<string> GetRaceResultsRawAsync(int year = 2023)
         {
             return await _http.GetStringAsync(
                 $"https://api.jolpi.ca/ergast/api/f1/{year}/results.json?limit=1000"

@@ -42,5 +42,5 @@ export const driverImages = {
     "zhou": null,
     "bottas": null,
     "sargeant": null,
-    "doohan": null
+    "doohan": null,
 }

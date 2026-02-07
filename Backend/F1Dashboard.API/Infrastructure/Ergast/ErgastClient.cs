@@ -9,22 +9,24 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
             _http = http;
         }
 
-      public async Task<string> GetDriverStandingsRawAsync(int year = 2024)
-{
-    var response = await _http.GetAsync(
-        $"https://api.jolpi.ca/ergast/api/f1/{year}/driverStandings.json"
-    );
+        public async Task<string> GetDriverStandingsRawAsync(int year = 2023)
+        {
+            return await _http.GetStringAsync(
+                $"https://api.jolpi.ca/ergast/api/f1/{year}/driverStandings.json?limit=1000"
+            );
+        }
+        public async Task<string> GetQualifyingResultsRawAsync(int year = 2023)
+        {
+            return await _http.GetStringAsync(
+                $"https://api.jolpi.ca/ergast/f1/{year}/qualifying/1.json"
+            );
+        }
 
-    var contentType = response.Content.Headers.ContentType?.ToString();
-    var body = await response.Content.ReadAsStringAsync();
-
-    Console.WriteLine("CONTENT-TYPE: " + contentType);
-    Console.WriteLine("BODY PREVIEW: " + body.Substring(0, Math.Min(200, body.Length)));
-
-    response.EnsureSuccessStatusCode();
-
-    return body;
-}
-
+        public async Task<string> GetRaceResultsRawAsync(int year = 2024)
+        {
+            return await _http.GetStringAsync(
+                $"https://api.jolpi.ca/ergast/api/f1/{year}/results.json?limit=1000"
+            );
+        }
     }
 }

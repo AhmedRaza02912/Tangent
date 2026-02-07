@@ -11,10 +11,15 @@ builder.Services.AddControllers()
     options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; 
 });
 
-
+builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<DriverService>();
 builder.Services.AddHttpClient<ErgastClient>();
+
+builder.Services.AddScoped<DriverService>();
+builder.Services.AddScoped<QualifyingStatsService>();
+builder.Services.AddScoped<DriverStatsService>();
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact",
@@ -27,8 +32,11 @@ builder.Services.AddCors(options =>
         });
 });
 var app = builder.Build();
-
-
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();

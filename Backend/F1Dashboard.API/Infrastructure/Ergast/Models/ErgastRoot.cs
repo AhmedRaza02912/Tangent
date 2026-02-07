@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 
+// To clean out duplication logic I removed ErgastRace and ErgadtQualifying models
+// Now a single file consists of all code.
 namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 {
     public class ErgastRoot
@@ -11,8 +13,13 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
     public class ErgastMrData
     {
         [JsonPropertyName("StandingsTable")]
-        public required ErgastStandingsTable StandingsTable { get; set; }
+        public ErgastStandingsTable? StandingsTable { get; set; }
+
+        [JsonPropertyName("RaceTable")]
+        public ErgastRaceTable? RaceTable { get; set; }
     }
+
+    // ---------------- STANDINGS ----------------
 
     public class ErgastStandingsTable
     {
@@ -24,7 +31,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
     {
         [JsonPropertyName("season")]
         public required string Season { get; set; }
-        
+
         [JsonPropertyName("round")]
         public required string Round { get; set; }
 
@@ -36,10 +43,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
     {
         [JsonPropertyName("position")]
         public string? Position { get; set; }
-        
-        [JsonPropertyName("positionText")]
-        public string? PositionText { get; set; }
-        
+
         [JsonPropertyName("points")]
         public string? Points { get; set; }
 
@@ -50,14 +54,54 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public required ErgastDriver Driver { get; set; }
     }
 
+    // ---------------- RACES ----------------
+
+    public class ErgastRaceTable
+    {
+        [JsonPropertyName("Races")]
+        public required List<ErgastRace> Races { get; set; }
+    }
+
+    public class ErgastRace
+    {
+        [JsonPropertyName("round")]
+        public required string Round { get; set; }
+
+        [JsonPropertyName("QualifyingResults")]
+        public List<ErgastQualifyingResult>? QualifyingResults { get; set; }
+
+        [JsonPropertyName("Results")]
+        public List<ErgastRaceResult>? Results { get; set; }
+    }
+
+    public class ErgastQualifyingResult
+    {
+        [JsonPropertyName("position")]
+        public required string Position { get; set; }
+
+        [JsonPropertyName("Driver")]
+        public required ErgastDriver Driver { get; set; }
+    }
+
+    public class ErgastRaceResult
+    {
+        [JsonPropertyName("status")]
+        public required string Status { get; set; }
+
+        [JsonPropertyName("Driver")]
+        public required ErgastDriver Driver { get; set; }
+    }
+
+    // ---------------- DRIVER ----------------
+
     public class ErgastDriver
     {
         [JsonPropertyName("driverId")]
         public required string DriverId { get; set; }
-        
+
         [JsonPropertyName("givenName")]
         public required string GivenName { get; set; }
-        
+
         [JsonPropertyName("familyName")]
         public required string FamilyName { get; set; }
     }

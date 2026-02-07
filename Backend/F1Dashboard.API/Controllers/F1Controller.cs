@@ -20,5 +20,6 @@ namespace F1Dashboard.API.Controllers
             var drivers = await _service.GetDriverStandingsAsync();
             return Ok(drivers);
         }
+
     }
 }

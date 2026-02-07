@@ -13,11 +13,12 @@ builder.Services.AddControllers()
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddHttpClient<ErgastClient>();
 
+builder.Services.AddHttpClient<ErgastClient>();
 builder.Services.AddScoped<DriverService>();
 builder.Services.AddScoped<QualifyingStatsService>();
 builder.Services.AddScoped<DriverStatsService>();
+builder.Services.AddScoped<ConstructorService>();
 
 
 builder.Services.AddCors(options =>

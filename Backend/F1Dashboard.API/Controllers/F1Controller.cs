@@ -8,10 +8,12 @@ namespace F1Dashboard.API.Controllers
     public class F1Controller : ControllerBase
     {
         private readonly DriverService _service;
+        private readonly ConstructorService _constructorService;
 
-        public F1Controller(DriverService service)
+        public F1Controller(DriverService service, ConstructorService constructorService)
         {
             _service = service;
+            _constructorService = constructorService;
         }
 
         [HttpGet("standings")]
@@ -22,4 +24,6 @@ namespace F1Dashboard.API.Controllers
         }
 
     }
+
 }
+

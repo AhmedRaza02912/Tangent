@@ -1,7 +1,8 @@
-using System.Text.Json.Serialization;
 
 // To clean out duplication logic I removed ErgastRace and ErgadtQualifying models
 // Now a single file consists of all code.
+
+using System.Text.Json.Serialization;
 namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 {
     public class ErgastRoot
@@ -36,9 +37,35 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public required string Round { get; set; }
 
         [JsonPropertyName("DriverStandings")]
-        public required List<ErgastDriverStanding> DriverStandings { get; set; }
+        public List<ErgastDriverStanding> DriverStandings { get; set; }
+
+        [JsonPropertyName("ConstructorStandings")]
+        public List<ErgastConstructorStanding> ConstructorStandings { get; set; }
     }
 
+    public class ErgastConstructorStanding
+    {
+        [JsonPropertyName("position")]
+        public string? Position { get; set; }
+
+        [JsonPropertyName("points")]
+        public string? Points { get; set; }
+
+        [JsonPropertyName("wins")]
+        public string? Wins { get; set; }
+
+        [JsonPropertyName("Constructor")]
+        public required ErgastConstructor Constructor { get; set; }
+    }
+
+    public class ErgastConstructor
+    {
+        [JsonPropertyName("constructorId")]
+        public required string ConstructorId { get; set; }
+
+        [JsonPropertyName("name")]
+        public required string Name {get; set;}
+    }
     public class ErgastDriverStanding
     {
         [JsonPropertyName("position")]

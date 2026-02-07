@@ -9,13 +9,16 @@ export default function DriverStandings() {
   useEffect(() => {
     fetch("http://localhost:5019/api/f1/drivers/standings")
       .then(res => {
-        console.log('Response status:', res.status);
-        console.log('Response headers:', res.headers);
-        if (!res.ok) throw new Error("Failed to fetch standings");
+        // console.log('Response status:', res.status);
+        // console.log('Response headers:', res.headers);
+        if (!res.ok)
+          {
+            throw new Error("Failed to fetch standings");
+          } 
         return res.json();
       })
       .then(data => {
-        console.log('Data received:', data);
+        // console.log('Data received:', data);
         setDrivers(data);
         setLoading(false);
       })

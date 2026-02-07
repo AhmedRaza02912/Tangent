@@ -28,5 +28,15 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
                 $"https://api.jolpi.ca/ergast/api/f1/{year}/results.json?limit=1000"
             );
         }
+
+        public async Task<string> GetConstructorStandingRawAsync(int year = 2024)
+        {
+            var response =  await _http.GetAsync(
+                $"https://api.jolpi.ca/ergast/f1/{year}/constructorstandings.json?"
+            );
+
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
     }
 }

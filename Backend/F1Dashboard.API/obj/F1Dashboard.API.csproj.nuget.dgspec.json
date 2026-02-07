@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.APi\\F1Dashboard.API.csproj": {}
+    "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\F1Dashboard.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.APi\\F1Dashboard.API.csproj": {
+    "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\F1Dashboard.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.APi\\F1Dashboard.API.csproj",
+        "projectUniqueName": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\F1Dashboard.API.csproj",
         "projectName": "F1Dashboard.API",
-        "projectPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.APi\\F1Dashboard.API.csproj",
+        "projectPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\F1Dashboard.API.csproj",
         "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.APi\\obj\\",
+        "outputPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

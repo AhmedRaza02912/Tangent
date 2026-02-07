@@ -5,16 +5,23 @@ import "./ConstructorStandings.css";
 export default function ConstructorStandings() {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:5019/api/f1/constructors/standings") // adjust port if needed
-      .then((res) => res.json())
+      .then((res) => {
+        if(!res.ok){
+          throw new Error("Failed to fetch standings");
+        }
+        return res.json();
+      })
       .then((data) => {
         setTeams(data);
         setLoading(false);
       })
       .catch((err) => {
         console.error("Failed to load constructor standings", err);
+        setError(err.message);
         setLoading(false);
       });
   }, []);
@@ -22,7 +29,9 @@ export default function ConstructorStandings() {
   if (loading) {
     return <div className="constructor-standings-card">Loading the standings...</div>;
   }
-
+if(error){
+  return <p>Error: {error}</p>
+}
   return (
     <div className="constructor-standings-card">
       <h3>Constructor Standings</h3>

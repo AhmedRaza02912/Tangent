@@ -30,7 +30,7 @@ export default function DriverStandings() {
   }, []);
 
   if (loading) {
-    return <p>Loading the standings</p>
+    return <p>Loading the standings...</p>
   }
   if (error) {
     return <p>Error: {error}</p>

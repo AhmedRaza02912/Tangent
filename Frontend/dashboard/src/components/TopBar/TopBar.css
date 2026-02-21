@@ -1,0 +1,22 @@
+.nav-buttons{
+    display: flex;
+    gap: 20px;
+}
+.button{
+  background: rgba(20, 20, 40, 0.95);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.button:hover{
+  background-color: #161616;
+  transition: 0.5s ease;
+}
+
+.button-active {
+  background-color: #2563eb;
+}

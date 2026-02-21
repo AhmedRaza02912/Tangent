@@ -1,8 +1,11 @@
+import "./TopBar.css";
+
 function Top(){
     return(
-        <div style={{padding: "16px", borderBottom: "1px solid #0b1020"}}>
-            <h2>F1 | MotoGP</h2>
-        </div>
+            <div className="nav-buttons">
+                <button className="button">Formula 1 🏎️</button>
+                <button className="button">MotoGP 🏍️</button>
+            </div>
     );
 }
 

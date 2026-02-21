@@ -20,6 +20,13 @@
   grid-template-rows: auto auto auto;
   gap: 32px;
 }
+.top-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .dashboard-top-row {
   gap: 25px;
   margin-bottom: 8px;

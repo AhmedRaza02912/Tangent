@@ -62,7 +62,6 @@ if(error){
                     <strong>{team.name}</strong>
                   </div>
                 </td>
-
                 <td>{team.wins}</td>
                 <td className="constructor-points">{team.points}</td>
               </tr>

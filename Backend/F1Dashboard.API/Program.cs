@@ -18,6 +18,7 @@ builder.Services.AddHttpClient<ErgastClient>();
 builder.Services.AddScoped<DriverService>();
 builder.Services.AddScoped<QualifyingStatsService>();
 builder.Services.AddScoped<DriverStatsService>();
+builder.Services.AddScoped<NextRaceService>();
 builder.Services.AddScoped<ConstructorService>();
 
 

@@ -1,27 +1,67 @@
+import { useEffect, useState } from "react";
 import CountdownCard from "../Countdown/CountdownCard";
-import "./RaceCard.css"; 
+import raceImages from "../../../utils/raceImages";
+import "./RaceCard.css";
+
+
+// Maps country names from the API to keys in our raceImages object
+const countryToImageKey = {
+  "Australia": "australia",
+  "Bahrain": "bahrain",
+  "China": "china",
+  "United States": "miami",
+  "Japan": "suzuka",
+  "United Kingdom": "silverstone",
+};
 
 export default function RaceCard() {
+  const [race, setRace] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchNextRace() {
+      try {
+        const res = await fetch("/api/f1/nextrace");
+        if (!res.ok) throw new Error("Failed to fetch next race");
+        const data = await res.json();
+        setRace(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchNextRace();
+  }, []);
+
+  const raceName = loading ? "Loading..." : error ? "Unavailable" : race?.raceName;
+  const raceDate = race ? new Date(`${race.date}T${race.time}`) : null;
+  const imageKey = countryToImageKey[race?.country];
+  const backgroundImage = imageKey ? raceImages[imageKey] : null;
+
   return (
-    <div className="card">
-      {/* Background Image Overlay */}
+    <div
+      className="card"
+      style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
+    >
       <div className="overlay"></div>
 
-      {/* Top Section: Title and Red Badge */}
       <div className="topSection">
         <div className="text">
           <h3 className="subHeader">Next Race:</h3>
-          <h2 className="header">British Grand Prix</h2>
+          <h2 className="header">{raceName}</h2>
+          {race && (
+            <p className="subText">{race.circuit} — {race.country}</p>
+          )}
         </div>
-        {/* Red Badge at Top Right */}
         <div className="redBadge">Sync with Calendar</div>
       </div>
 
-      {/* Bottom Section: The Countdown Component */}
       <div className="countdownWrapper">
-        <CountdownCard />
+        <CountdownCard targetDate={raceDate} />
       </div>
     </div>
   );
 }
-

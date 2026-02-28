@@ -11,7 +11,7 @@ const raceImages = {
     "miami" : miami,
     "silverstone" : silverstone,
     "suzuka" : suzuka,
-    australia : australia
+    "australia" : australia
 }
 
 export default raceImages;

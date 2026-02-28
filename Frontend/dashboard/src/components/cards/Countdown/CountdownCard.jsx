@@ -1,16 +1,7 @@
 import { useEffect, useState } from "react";
 
-function CountdownCard() {
-  const raceDate = new Date("2026-02-12T14:00:00");
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+function CountdownCard({ targetDate }) {
+  const raceDate = targetDate || new Date("2026-03-16T05:00:00Z");
 
   function getTimeLeft() {
     const difference = raceDate - new Date();
@@ -21,7 +12,18 @@ function CountdownCard() {
       seconds: Math.max(0, Math.floor((difference / 1000) % 60)),
     };
   }
-  const formatTime = (time) => String(time).padStart(2, '0');
+
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  const formatTime = (time) => String(time).padStart(2, "0");
 
   return (
     <div style={styles.glassContainer}>
@@ -35,9 +37,11 @@ function CountdownCard() {
     </div>
   );
 }
+
 function Separator() {
   return <div style={styles.separator}>:</div>;
 }
+
 function TimeGroup({ value, label }) {
   return (
     <div style={styles.timeGroup}>
@@ -49,8 +53,8 @@ function TimeGroup({ value, label }) {
 
 const styles = {
   glassContainer: {
-    background: "rgba(23, 23, 23, 0.6)", 
-    backdropFilter: "blur(12px)", 
+    background: "rgba(23, 23, 23, 0.6)",
+    backdropFilter: "blur(12px)",
     WebkitBackdropFilter: "blur(12px)",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     borderRadius: "12px",
@@ -67,7 +71,7 @@ const styles = {
     alignItems: "center",
   },
   number: {
-    fontSize: "20px", 
+    fontSize: "20px",
     fontWeight: "600",
     lineHeight: "1",
     fontVariantNumeric: "tabular-nums",
@@ -83,7 +87,7 @@ const styles = {
   separator: {
     fontSize: "28px",
     fontWeight: "400",
-    marginTop: "-15px", 
+    marginTop: "-15px",
     opacity: 0.8,
   },
 };

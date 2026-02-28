@@ -1,4 +1,4 @@
-namespace F1Dashboard.API.DTOs;
+namespace F1Dashboard.Api.DTOs;
 
 public class NextRaceDto
 {

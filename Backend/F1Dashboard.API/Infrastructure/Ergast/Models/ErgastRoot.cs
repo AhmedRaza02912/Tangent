@@ -37,10 +37,10 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public required string Round { get; set; }
 
         [JsonPropertyName("DriverStandings")]
-        public List<ErgastDriverStanding> DriverStandings { get; set; }
+        public List<ErgastDriverStanding>? DriverStandings { get; set; }
 
         [JsonPropertyName("ConstructorStandings")]
-        public List<ErgastConstructorStanding> ConstructorStandings { get; set; }
+        public List<ErgastConstructorStanding>? ConstructorStandings { get; set; }
     }
 
     public class ErgastConstructorStanding
@@ -64,7 +64,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public required string ConstructorId { get; set; }
 
         [JsonPropertyName("name")]
-        public required string Name {get; set;}
+        public required string Name { get; set; }
     }
     public class ErgastDriverStanding
     {
@@ -93,6 +93,17 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
     {
         [JsonPropertyName("round")]
         public required string Round { get; set; }
+
+        [JsonPropertyName("raceName")]
+        public string RaceName { get; set; } = string.Empty;
+
+        [JsonPropertyName("date")]
+        public string Date { get; set; } = string.Empty;
+
+        [JsonPropertyName("time")]
+        public string? Time { get; set; }
+        [JsonPropertyName("Circuit")]
+        public ErgastCircuit? Circuit { get; set; }
 
         [JsonPropertyName("QualifyingResults")]
         public List<ErgastQualifyingResult>? QualifyingResults { get; set; }
@@ -131,5 +142,23 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("familyName")]
         public required string FamilyName { get; set; }
+    }
+
+    public class ErgastCircuit
+    {
+        [JsonPropertyName("circuitName")]
+        public string CircuitName { get; set; } = string.Empty;
+
+        [JsonPropertyName("Location")]
+        public ErgastLocation? Location { get; set; }
+
+    }
+
+    public class ErgastLocation
+    {
+        [JsonPropertyName("country")]
+        public string Country { get; set; } = string.Empty;
+        [JsonPropertyName("locality")]
+        public string Locality { get; set; } = string.Empty;
     }
 }

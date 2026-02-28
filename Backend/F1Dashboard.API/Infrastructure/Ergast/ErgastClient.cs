@@ -38,5 +38,14 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
+
+        public async Task<string> GetNextRaceRawAsync(int year = 2026)
+        {
+            var response = await _http.GetAsync($"https://api.jolpi.ca/ergast/f1/{year}/next.json?");
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
+        
+        
     }
 }

@@ -51,8 +51,7 @@ export default function DriverStandings() {
           </thead>
           <tbody>
             {drivers.map((driver, index) => (    
-              <tr key={driver.imageKey || index}>  {/*Changed mapping based on position to image
-              and used index as fallback*/}
+              <tr key={driver.imageKey || index}>
                 <td className="driver-cell">
                   {driverImages[driver.imageKey] ? (
                     <img src={driverImages[driver.imageKey]} alt={driver.name} />

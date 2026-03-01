@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./CountdownCard.css";
 
 function CountdownCard({ targetDate }) {
   const raceDate = targetDate || new Date("2026-03-16T05:00:00Z");
@@ -26,7 +27,7 @@ function CountdownCard({ targetDate }) {
   const formatTime = (time) => String(time).padStart(2, "0");
 
   return (
-    <div style={styles.glassContainer}>
+    <div className="countdown-glass-container">
       <TimeGroup value={formatTime(timeLeft.days)} label="DAYS" />
       <Separator />
       <TimeGroup value={formatTime(timeLeft.hours)} label="HOURS" />
@@ -39,57 +40,16 @@ function CountdownCard({ targetDate }) {
 }
 
 function Separator() {
-  return <div style={styles.separator}>:</div>;
+  return <div className="countdown-separator">:</div>;
 }
 
 function TimeGroup({ value, label }) {
   return (
-    <div style={styles.timeGroup}>
-      <span style={styles.number}>{value}</span>
-      <span style={styles.label}>{label}</span>
+    <div className="countdown-time-group">
+      <span className="countdown-number">{value}</span>
+      <span className="countdown-label">{label}</span>
     </div>
   );
 }
-
-const styles = {
-  glassContainer: {
-    background: "rgba(23, 23, 23, 0.6)",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(12px)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    borderRadius: "12px",
-    padding: "15px 30px",
-    display: "inline-flex",
-    alignItems: "center",
-    gap: "15px",
-    color: "white",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  },
-  timeGroup: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  number: {
-    fontSize: "20px",
-    fontWeight: "600",
-    lineHeight: "1",
-    fontVariantNumeric: "tabular-nums",
-  },
-  label: {
-    fontSize: "12px",
-    fontWeight: "300",
-    opacity: 0.6,
-    letterSpacing: "1px",
-    marginTop: "5px",
-    textTransform: "uppercase",
-  },
-  separator: {
-    fontSize: "28px",
-    fontWeight: "400",
-    marginTop: "-15px",
-    opacity: 0.8,
-  },
-};
 
 export default CountdownCard;

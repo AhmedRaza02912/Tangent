@@ -1,5 +1,5 @@
 ---
-name: Suggester
+name: Implementor
 description: Suggest code implementation strategies and best practices for that language or framework. This agent can also suggest improvements to existing code.
 arguement-hint: The inputs this agent expects, e.g "Can you implement this", "Could you suggest improvements to this code", "What are some best practices for implementing this feature?"
 tools: [edit, read, web]

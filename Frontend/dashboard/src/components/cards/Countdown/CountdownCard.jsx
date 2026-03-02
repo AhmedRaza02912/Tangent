@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./CountdownCard.css";
 
 function CountdownCard({ targetDate }) {
-  const raceDate = targetDate || new Date("2026-03-16T05:00:00Z");
+  const raceDate = useMemo(() => {
+    if (!targetDate) return null;
+    const parsed = new Date(targetDate);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  }, [targetDate]);
 
   function getTimeLeft() {
+    if (!raceDate) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
     const difference = raceDate - new Date();
     return {
       days: Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24))),
@@ -17,14 +23,28 @@ function CountdownCard({ targetDate }) {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
+    if (!raceDate) return;
 
+    setTimeLeft(getTimeLeft());
+    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [raceDate]);
 
   const formatTime = (time) => String(time).padStart(2, "0");
+
+  if (!raceDate) {
+    return (
+      <div className="countdown-glass-container countdown-skeleton" aria-busy="true" aria-label="Loading countdown">
+        <SkeletonGroup />
+        <Separator />
+        <SkeletonGroup />
+        <Separator />
+        <SkeletonGroup />
+        <Separator />
+        <SkeletonGroup />
+      </div>
+    );
+  }
 
   return (
     <div className="countdown-glass-container">
@@ -48,6 +68,14 @@ function TimeGroup({ value, label }) {
     <div className="countdown-time-group">
       <span className="countdown-number">{value}</span>
       <span className="countdown-label">{label}</span>
+    </div>
+  );
+}
+
+function SkeletonGroup() {
+  return (
+    <div className="countdown-time-group countdown-time-group-skeleton" aria-hidden="true">
+      <span className="countdown-number countdown-skeleton-block" />
     </div>
   );
 }

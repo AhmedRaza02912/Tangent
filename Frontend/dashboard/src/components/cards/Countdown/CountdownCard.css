@@ -11,7 +11,33 @@
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.countdown-skeleton .countdown-separator {
+  opacity: 0.35;
+}
 
+.countdown-time-group-skeleton {
+  min-width: 2.2ch;
+}
+
+.countdown-skeleton-block {
+  display: inline-block;
+  width: 2.2ch;
+  height: 1.1em;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.12) 25%,
+    rgba(255, 255, 255, 0.26) 50%,
+    rgba(255, 255, 255, 0.12) 75%
+  );
+  background-size: 200% 100%;
+  animation: countdown-shimmer 1.2s infinite linear;
+}
+
+@keyframes countdown-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 .countdown-time-group {
   display: flex;
   flex-direction: column;

@@ -94,3 +94,13 @@
 .constructor-points {
   font-weight: bold;
 }
+
+.standings-status {
+  margin: 12px 0;
+  text-align: center;
+  color: #cbd5f5;
+}
+
+.standings-status.error {
+  color: #ff9fa3;
+}

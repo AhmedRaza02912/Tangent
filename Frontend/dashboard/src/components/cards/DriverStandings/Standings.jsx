@@ -6,6 +6,16 @@ export default function DriverStandings() {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const renderStatusCard = (message, isError = false) => (
+    <div className="driver-standings-card">
+      <h3>Driver Standings</h3>
+      <div className="table-wrapper">
+        <p className={`standings-status${isError ? " error" : ""}`}>{message}</p>
+      </div>
+    </div>
+  );
+
   useEffect(() => {
     fetch("http://localhost:5019/api/f1/drivers/standings")
       .then(res => {
@@ -30,11 +40,17 @@ export default function DriverStandings() {
   }, []);
 
   if (loading) {
-    return <p>Loading the standings...</p>
+    return renderStatusCard("Loading standings...");
   }
+
   if (error) {
-    return <p>Error: {error}</p>
+    return renderStatusCard("Standings unavailable right now.", true);
   }
+
+  if (drivers.length === 0) {
+    return renderStatusCard("No standings data available.");
+  }
+
   return (
     <div className="driver-standings-card">
       <h3>Driver Standings</h3>

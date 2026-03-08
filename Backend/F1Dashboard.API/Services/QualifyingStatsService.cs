@@ -13,9 +13,9 @@ public class QualifyingStatsService
         _ergastClient = ergastClient;
     }
 
-    public async Task<Dictionary<string, int>> GetPolesAsync(int year)
+    public async Task<Dictionary<string, int>> GetPolesAsync()
     {
-        var json = await _ergastClient.GetQualifyingResultsRawAsync(year);
+        var json = await _ergastClient.GetQualifyingResultsRawAsync();
 
         var root = JsonSerializer.Deserialize<ErgastRoot>(json);
         var races = root?.MRData?.RaceTable?.Races;

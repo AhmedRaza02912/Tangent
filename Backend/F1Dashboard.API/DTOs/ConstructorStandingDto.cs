@@ -7,6 +7,4 @@ public class ConstructorStandingDto
     public int Points { get; set; }
     public int Wins { get; set; }
     public string constructorId { get; set; } = string.Empty;
-
-    public string constructorImage {get; set;} = string.Empty;
 }

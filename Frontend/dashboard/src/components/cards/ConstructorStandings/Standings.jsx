@@ -42,11 +42,6 @@ export default function ConstructorStandings() {
   if (error) {
     return renderStatusCard("Standings unavailable right now.", true);
   }
-
-  if (teams.length === 0) {
-    return renderStatusCard("No standings data available.");
-  }
-
   return (
     <div className="constructor-standings-card">
       <h3>Constructor Standings</h3>

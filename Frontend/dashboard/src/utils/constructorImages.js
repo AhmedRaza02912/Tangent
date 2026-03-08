@@ -7,7 +7,8 @@ import mercedes from "../assets/Teams/mercedes.png";
 import redbull from "../assets/Teams/redbull.png";
 import williams from "../assets/Teams/williams.png";
 import astonmartin from "../assets/Teams/astonmartin.png";
-import sauber from "../assets/Teams/sauber.jpg";
+import audi from "../assets/Teams/Audi.png";
+import cadillac from "../assets/Teams/Cadillac.png";
 
 const constructorImages = {
     "mclaren" : mclaren,
@@ -19,7 +20,8 @@ const constructorImages = {
     "rb" : racingbulls,
     "aston_martin" : astonmartin,
     "alpine" : alpine,
-    "sauber": sauber
+    "audi": audi,
+    "cadillac": cadillac
 }
 
 export default constructorImages;

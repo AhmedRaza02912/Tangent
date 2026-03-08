@@ -13,9 +13,9 @@ public class DriverStatsService
         _ergast = ergast;
     }
 
-    public async Task<Dictionary<string, int>> GetDnfsAsync(int year)
+    public async Task<Dictionary<string, int>> GetDnfsAsync()
     {
-        var json = await _ergast.GetRaceResultsRawAsync(year);
+        var json = await _ergast.GetRaceResultsRawAsync();
 
         var root = JsonSerializer.Deserialize<ErgastRoot>(json);
 

@@ -9,9 +9,7 @@ public class DriverService
 {
     private readonly QualifyingStatsService _qualifyingStats;
     private readonly ErgastClient _ergastClient;
-
     private readonly DriverStatsService _driverStatsService;
-
     public DriverService(
         ErgastClient ergastClient,
         QualifyingStatsService qualifyingStats,
@@ -22,14 +20,14 @@ public class DriverService
         _driverStatsService = driverStatsService;
     }
 
-    public async Task<List<DriverStandingDto>> GetDriverStandingsAsync(int year = 2024)
+    public async Task<List<DriverStandingDto>> GetDriverStandingsAsync()
     {
-        var json = await _ergastClient.GetDriverStandingsRawAsync(year);
+        var json = await _ergastClient.GetDriverStandingsRawAsync();
 
         var root = JsonSerializer.Deserialize<ErgastRoot>(json);
         var standings = root?.MRData?.StandingsTable?.StandingsLists?[0]?.DriverStandings;
-        var poles = await _qualifyingStats.GetPolesAsync(year);
-        var dnfs = await _driverStatsService.GetDnfsAsync(year);
+        var poles = await _qualifyingStats.GetPolesAsync();
+        var dnfs = await _driverStatsService.GetDnfsAsync();
 
 
         if (standings == null || standings.Count == 0)

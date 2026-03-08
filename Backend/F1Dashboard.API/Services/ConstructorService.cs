@@ -15,9 +15,9 @@ public class ConstructorService
         _ergastClient = ergastClient;
     }
 
-    public async Task<List<ConstructorStandingDto>> GetConstructorStandingsAsync(int year = 2024)
+    public async Task<List<ConstructorStandingDto>> GetConstructorStandingsAsync()
     {
-        var json = await _ergastClient.GetConstructorStandingRawAsync(year);
+        var json = await _ergastClient.GetConstructorStandingRawAsync();
         var root = JsonSerializer.Deserialize<ErgastRoot>(json);
 
         var standings = root?.MRData?.StandingsTable?.StandingsLists?.FirstOrDefault()?.ConstructorStandings;
@@ -28,7 +28,7 @@ public class ConstructorService
         }
 
         return standings
-        .OrderBy(s => int.Parse(s.Position!))
+        .OrderBy(s => int.TryParse(s.Position, out var pos) ? pos : int.MaxValue)
         .Select(s => new ConstructorStandingDto
         {
             Position = s.Position,
@@ -36,8 +36,6 @@ public class ConstructorService
             Points = int.Parse(s.Points!),
             Wins = int.Parse(s.Wins!),
             constructorId = s.Constructor.ConstructorId
-
-
         })
         .ToList();
     }

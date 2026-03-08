@@ -14,9 +14,9 @@ public class NextRaceService
         _ergastClient = ergastClient;
     }
 
-    public async Task<NextRaceDto?> GetNextRaceAsync(int year = 2026)
+    public async Task<NextRaceDto?> GetNextRaceAsync()
     {
-        var json = await _ergastClient.GetNextRaceRawAsync(year);
+        var json = await _ergastClient.GetNextRaceRawAsync();
         var root = JsonSerializer.Deserialize<ErgastRoot>(json);
 
         var race = root?.MRData?.RaceTable?.Races?.FirstOrDefault();

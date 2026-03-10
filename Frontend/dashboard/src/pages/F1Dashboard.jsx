@@ -24,7 +24,7 @@ export default function Dashboard({ activeSeries, onSeriesChange }) {
         {/* Middle Row: Standings */}
         <div className="dashboard-middle-row">
           {/*Added scrollable on my components here. Kept debugging for 
-                    a long time*/}
+          a long time*/}
           <div className="dashboard-driver-standings">
             <DriverStandings />
           </div>

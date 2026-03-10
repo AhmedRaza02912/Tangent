@@ -13,6 +13,13 @@ builder.Services.AddControllers()
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient("NewsApi", client =>
+{
+   client.BaseAddress = new Uri(builder.Configuration["NewsApi:BaseUrl"]); 
+   client.DefaultRequestHeaders.Add("User-Agent", "F1App/1.0");
+   client.DefaultRequestHeaders.Add("Accept", "application/json");
+});
 
 builder.Services.AddHttpClient<ErgastClient>();
 builder.Services.AddScoped<DriverService>();
@@ -20,6 +27,7 @@ builder.Services.AddScoped<QualifyingStatsService>();
 builder.Services.AddScoped<DriverStatsService>();
 builder.Services.AddScoped<NextRaceService>();
 builder.Services.AddScoped<ConstructorService>();
+builder.Services.AddScoped<NewsService>();
 
 
 builder.Services.AddCors(options =>

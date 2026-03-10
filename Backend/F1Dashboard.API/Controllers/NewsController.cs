@@ -16,7 +16,7 @@ public class NewsController : ControllerBase
     {
         try
         {
-            var news = await _newsService.GetF1NewsAysnc();
+            var news = await _newsService.GetF1NewsAsync();
             return Content(news, "application/json");
         }
         catch (Exception ex)

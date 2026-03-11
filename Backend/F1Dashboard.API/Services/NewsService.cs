@@ -23,7 +23,7 @@ public class NewsService
         var client = _httpClientFactory.CreateClient("NewsApi");
         var apiKey = _config["NewsApi:ApiKey"];
 
-        var url = $"everything?q=F1+racing+OR+Formula+1+driver+OR+F1+regulation&language=en&sortBy=publishedAt&pageSize=20&apiKey=YOURKEY";
+        var url = $"everything?q=F1+racing+OR+Formula+1+driver+OR+F1+regulation&language=en&sortBy=publishedAt&pageSize=20&apiKey=6e2e751fe1a649e69dec0c7becee7cc6";
 
         var response = await client.GetAsync(url);
         var content = await response.Content.ReadAsStringAsync();

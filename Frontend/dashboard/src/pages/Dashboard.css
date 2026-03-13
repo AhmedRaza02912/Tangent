@@ -37,7 +37,7 @@
 }
 .dashboard-latest-news {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 2;
 
   background: rgba(16, 16, 22, 0.7);
   border-radius: 16px;

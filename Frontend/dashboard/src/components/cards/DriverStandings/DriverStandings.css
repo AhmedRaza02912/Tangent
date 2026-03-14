@@ -63,7 +63,7 @@ th {
   color: #cbd5f5;
 }
 tbody tr {
-  transition: background 0.25s ease;
+  transition: 0.25s ease;
 }
 tbody tr:hover {
   background: rgba(255,255,255,0.04);

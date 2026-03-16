@@ -45,6 +45,13 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
+
+        public async Task<string> GetLastRaceResultsRawAsync()
+        {
+            var response = await _http.GetAsync($"https://api.jolpi.ca/ergast/f1/{year}/last/results");
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
         
         
     }

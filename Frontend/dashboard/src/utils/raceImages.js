@@ -5,47 +5,51 @@ import silverstone from "../assets/Races/silverstone.webp";
 import australia from "../assets/Races/Australia.avif";
 import abudhabi from "../assets/Races/Abu Dhabi.avif";
 import austria from "../assets/Races/Austria.jpg";
-import Azerbijan from "../assets/Races/Azerbijan.avif";
+import azerbaijan from "../assets/Races/Azerbijan.avif";
 import belgium from "../assets/Races/Belgium.avif";
 import brazil from "../assets/Races/brazil.png";
 import canada from "../assets/Races/Canada.avif";
 import cota from "../assets/Races/COTA.webp";
 import hungary from "../assets/Races/Hungary.jpg";
-import itlay from "../assets/Races/Itlay.avif";
+import italy from "../assets/Races/Itlay.avif";
 import japan from "../assets/Races/Japan.avif";
 import lasvegas from "../assets/Races/Las Vegas.png";
 import madrid from "../assets/Races/madrid.webp";
 import mexico from "../assets/Races/Mexico.jpg";
 import monaco from "../assets/Races/monaco.jpg";
-import neatherlands from "../assets/Races/Neatherlands.avif";
+import netherlands from "../assets/Races/Neatherlands.avif";
 import qatar from "../assets/Races/Qatar.webp";
 import singapore from "../assets/Races/Singapore.avif";
 import spain from "../assets/Races/Spain.avif";
-const raceImages = {
-    "bahrain" : bahrain,
-    "china" : china,
-    "miami" : miami,
-    "silverstone" : silverstone,
-    "australia" : australia,
-    "abudhabi" : abudhabi,
-    "austria" : austria,
-    "azerbijan" : Azerbijan,
-    "belgium" : belgium,
-    "brazil" : brazil,
-    "canada" : canada,
-    "cota" : cota,
-    "hungary" : hungary,
-    "itlay" : itlay,
-    "japan" : japan,
-    "lasvegas" : lasvegas,
-    "madrid" : madrid,
-    "mexico" : mexico,
-    "monaco" : monaco,
-    "neatherlands" : neatherlands,
-    "qatar" : qatar,
-    "singapore" : singapore,
-    "spain" : spain
+import saudiarabia from "../assets/Races/Saudi.avif"; 
 
-}
+const raceImages = {
+  // circuitId 
+  "bahrain": bahrain,              
+  "shanghai": china,               
+  "albert_park": australia,        
+  "suzuka": japan,                 
+  "miami": miami,                  
+  "imola": italy,                 
+  "monaco": monaco,                
+  "villeneuve": canada,            
+  "catalunya": spain,              
+  "red_bull_ring": austria,        
+  "silverstone": silverstone,      
+  "hungaroring": hungary,         
+  "spa": belgium,                  
+  "zandvoort": netherlands,        
+  "monza": italy,                  
+  "baku": azerbaijan,              
+  "marina_bay": singapore,        
+  "americas": cota,                
+  "rodriguez": mexico,             
+  "interlagos": brazil,            
+  "vegas": lasvegas,               
+  "losail": qatar,                 
+  "yas_marina": abudhabi,          
+  "jeddah": saudiarabia,           
+  "madrid": madrid,                
+};
 
 export default raceImages;

@@ -5,4 +5,50 @@
   border-radius: 16px;
   padding: 14px 12px;
   filter: drop-shadow(2px 2px 5px black);
+  display: flex;
+  flex-direction: column;
+}
+.heading{
+  text-align:center;
+}
+.results-table-container {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.results-table th {
+  text-align: left;
+  padding-bottom: 8px;
+  color: #b0b3c6;
+}
+
+.results-table td {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.driver-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.driver-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.position {
+  font-weight: bold;
+}
+
+.gap {
+  color: #a6a9c9;
 }

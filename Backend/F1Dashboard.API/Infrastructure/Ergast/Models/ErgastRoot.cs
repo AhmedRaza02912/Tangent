@@ -1,7 +1,3 @@
-
-// To clean out duplication logic I removed ErgastRace and ErgadtQualifying models
-// Now a single file consists of all code.
-
 using System.Text.Json.Serialization;
 namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 {
@@ -66,6 +62,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         [JsonPropertyName("name")]
         public required string Name { get; set; }
     }
+    
     public class ErgastDriverStanding
     {
         [JsonPropertyName("position")]
@@ -102,6 +99,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("time")]
         public string? Time { get; set; }
+        
         [JsonPropertyName("Circuit")]
         public ErgastCircuit? Circuit { get; set; }
 
@@ -123,11 +121,21 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
     public class ErgastRaceResult
     {
+        [JsonPropertyName("position")]
+        public string? Position {get;set;}
+
         [JsonPropertyName("status")]
         public required string Status { get; set; }
 
         [JsonPropertyName("Driver")]
         public required ErgastDriver Driver { get; set; }
+
+        [JsonPropertyName("Time")]
+        public ErgastTime? Time {get;set;}
+
+        // ✅ FIXED: Changed from string to ErgastConstructor object
+        [JsonPropertyName("Constructor")]  // Capital C to match JSON
+        public ErgastConstructor? Constructor {get;set;}
     }
 
     // ---------------- DRIVER ----------------
@@ -151,14 +159,23 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("Location")]
         public ErgastLocation? Location { get; set; }
-
     }
 
     public class ErgastLocation
     {
         [JsonPropertyName("country")]
         public string Country { get; set; } = string.Empty;
+        
         [JsonPropertyName("locality")]
         public string Locality { get; set; } = string.Empty;
+    }
+
+    public class ErgastTime
+    {
+        [JsonPropertyName("millis")]
+        public string? Millis {get;set;}
+        
+        [JsonPropertyName("time")]
+        public string? Time {get;set;}
     }
 }

@@ -159,6 +159,9 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("Location")]
         public ErgastLocation? Location { get; set; }
+
+        [JsonPropertyName("circuitId")]
+        public string CircuitId {get;set;} = string.Empty;
     }
 
     public class ErgastLocation

@@ -32,7 +32,7 @@ public class RaceResultService
                 return new List<RaceResultsDto>();
             }
             return race.Results
-                .Where(r => r.Driver != null)  
+                .Where(r => r.Driver != null)
                 .Select(r =>
                 {
                     string gap;
@@ -63,7 +63,7 @@ public class RaceResultService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ Error in GetLastRaceResultsAsync: {ex.Message}");
+            Console.WriteLine($"Error in GetLastRaceResultsAsync: {ex.Message}");
             return new List<RaceResultsDto>();
         }
     }

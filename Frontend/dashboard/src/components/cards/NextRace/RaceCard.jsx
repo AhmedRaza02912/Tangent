@@ -3,17 +3,6 @@ import CountdownCard from "../Countdown/CountdownCard";
 import raceImages from "../../../utils/raceImages";
 import "./RaceCard.css";
 
-
-// Maps country names from the API to keys in our raceImages object
-const countryToImageKey = {
-  "Australia": "australia",
-  "Bahrain": "bahrain",
-  "China": "china",
-  "United States": "miami",
-  "Japan": "suzuka",
-  "United Kingdom": "silverstone",
-};
-
 export default function RaceCard() {
   const [race, setRace] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -38,8 +27,7 @@ export default function RaceCard() {
 
   const raceName = loading ? "Loading..." : error ? "Unavailable" : race?.raceName;
   const raceDate = race ? new Date(`${race.date}T${race.time}`) : null;
-  const imageKey = countryToImageKey[race?.country];
-  const backgroundImage = imageKey ? raceImages[imageKey] : null;
+  const backgroundImage = race?.circuitId ? raceImages[race.circuitId] ?? null : null;
 
   return (
     <div

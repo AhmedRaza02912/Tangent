@@ -31,6 +31,7 @@ public class NextRaceService
             RaceName = race.RaceName,
             Circuit = race.Circuit.CircuitName,
             Country = race.Circuit.Location.Country,
+            CircuitId = race.Circuit.CircuitId,
             Date = race.Date,
             Time = race.Time ?? "00:00:00Z",
             Round = int.Parse(race.Round)

@@ -38,7 +38,7 @@ export default function RaceCard() {
 
       <div className="topSection">
         <div className="text">
-          <h3 className="subHeader">Next Race:</h3>
+          <h3 className="subHeader">Next Race</h3>
           <h2 className="header">{raceName}</h2>
           {race && (
             <p className="subText">{race.circuit} — {race.country}</p>

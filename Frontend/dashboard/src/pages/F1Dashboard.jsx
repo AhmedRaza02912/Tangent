@@ -26,14 +26,19 @@ export default function Dashboard({ activeSeries, onSeriesChange }) {
           <LatestNews />
         </div>
         {/* Middle Row: Standings */}
-        <div className="dashboard-middle-row">
-          {/*Added scrollable on my components here. Kept debugging for 
-          a long time*/}
-          <div className="dashboard-driver-standings">
-            <DriverStandings />
+        <div className="dashboard-left-column">
+          <div className="dashboard-middle-row">
+            <div className="dashboard-driver-standings">
+              <DriverStandings />
+            </div>
+
+            <div className="dashboard-constructor-standings">
+              <ConstructorStandings />
+            </div>
           </div>
-          <div className="dashboard-constructor-standings">
-            <ConstructorStandings />
+
+          <div className="dashboard-head-to-head">
+            {/* Your Head to Head Component */}
           </div>
         </div>
         <div className="dashboard-bottom-row">

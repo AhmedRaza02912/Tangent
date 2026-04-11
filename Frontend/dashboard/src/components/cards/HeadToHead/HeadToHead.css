@@ -1,0 +1,136 @@
+.h2h-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: rgba(20, 20, 40, 0.95);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* Title */
+.h2h-title {
+  color: #b9eae4;
+  text-align: center;
+  font-size:30px;
+}
+
+.h2h-drivers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Base driver */
+.h2h-driver {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  width: 45%;
+}
+
+/* LEFT driver */
+.h2h-driver.left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* RIGHT driver */
+.h2h-driver.right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.h2h-driver img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.h2h-vs {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 60%;
+  font-weight: bold;
+  color: white;
+}
+
+/* Stats */
+.h2h-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.h2h-stat-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Values */
+.value {
+  width: 40px;
+  color: white;
+  font-size: 20px;
+}
+
+.value.left {
+  text-align: left;
+}
+
+.value.right {
+  text-align: right;
+}
+
+/* Bar area */
+.bar-area {
+  flex: 1;
+  height: 8px;
+  position: relative;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+/* Center line */
+.center-line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%);
+}
+
+/* Bars */
+.bar {
+  position: absolute;
+  height: 100%;
+  max-width: 50%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+/* LEFT bar */
+.bar.left {
+  right: 50%;
+  background: #452fbd;
+}
+
+/* RIGHT bar */
+.bar.right {
+  left: 50%;
+  background: #6b0c0c;
+}
+
+/* Label */
+.label {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: #dbe2ed;
+  font-weight: bold;
+}

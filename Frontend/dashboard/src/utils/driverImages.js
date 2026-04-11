@@ -22,7 +22,8 @@ import verstappen from "../assets/Drivers/verstappen.png";
 import stroll from "../assets/Drivers/stroll.png";
 
 export const driverImages = {
-    "max_verstappen": verstappen,  // There were mismatches between the file names and imagekeys
+    "verstappen": verstappen,
+    "max_verstappen": verstappen,
     "hamilton": hamilton,
     "leclerc": leclerc,
     "alonso": alonso,

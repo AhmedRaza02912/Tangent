@@ -5,6 +5,7 @@ import ConstructorStandings from "../components/cards/ConstructorStandings/Stand
 import UpcomingEvents from "../components/cards/UpcomingEvents/Upcoming.jsx";
 import LatestNews from "../components/cards/LatestNewsCard/NewsCard.jsx";
 import Results from "../components/cards/Results/Results.jsx";
+import HeadToHead  from "../components/cards/HeadToHead/HeadToHead.jsx";
 import "./Dashboard.css";
 
 export default function Dashboard({ activeSeries, onSeriesChange }) {
@@ -31,15 +32,13 @@ export default function Dashboard({ activeSeries, onSeriesChange }) {
             <div className="dashboard-driver-standings">
               <DriverStandings />
             </div>
-
             <div className="dashboard-constructor-standings">
               <ConstructorStandings />
             </div>
           </div>
-
-          <div className="dashboard-head-to-head">
-            {/* Your Head to Head Component */}
-          </div>
+            <div className="dashboard-head-to-head">
+              <HeadToHead />
+            </div>
         </div>
         <div className="dashboard-bottom-row">
           <UpcomingEvents />

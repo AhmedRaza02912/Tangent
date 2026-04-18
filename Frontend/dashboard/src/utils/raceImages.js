@@ -1,6 +1,6 @@
 import bahrain from "../assets/Races/Bahrain.jpg";
 import china from "../assets/Races/China.webp";
-import miami from "../assets/Races/miami.avif";
+import miami from "../assets/Races/Miami.avif";
 import silverstone from "../assets/Races/silverstone.webp";
 import australia from "../assets/Races/Australia.avif";
 import abudhabi from "../assets/Races/Abu Dhabi.avif";
@@ -14,7 +14,7 @@ import hungary from "../assets/Races/Hungary.jpg";
 import italy from "../assets/Races/Itlay.avif";
 import japan from "../assets/Races/Japan.avif";
 import lasvegas from "../assets/Races/Las Vegas.png";
-import madrid from "../assets/Races/madrid.webp";
+import madrid from "../assets/Races/Madrid.webp";
 import mexico from "../assets/Races/Mexico.jpg";
 import monaco from "../assets/Races/monaco.jpg";
 import netherlands from "../assets/Races/Neatherlands.avif";

@@ -7,7 +7,7 @@ import abudhabi from "../assets/Races/Abu Dhabi.avif";
 import austria from "../assets/Races/Austria.jpg";
 import azerbaijan from "../assets/Races/Azerbijan.avif";
 import belgium from "../assets/Races/Belgium.avif";
-import brazil from "../assets/Races/brazil.png";
+import brazil from "../assets/Races/Brazil.png";
 import canada from "../assets/Races/Canada.avif";
 import cota from "../assets/Races/COTA.webp";
 import hungary from "../assets/Races/Hungary.jpg";

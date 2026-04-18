@@ -16,7 +16,7 @@ import japan from "../assets/Races/Japan.avif";
 import lasvegas from "../assets/Races/Las Vegas.png";
 import madrid from "../assets/Races/Madrid.webp";
 import mexico from "../assets/Races/Mexico.jpg";
-import monaco from "../assets/Races/monaco.jpg";
+import monaco from "../assets/Races/Monaco.jpg";
 import netherlands from "../assets/Races/Neatherlands.avif";
 import qatar from "../assets/Races/Qatar.webp";
 import singapore from "../assets/Races/Singapore.avif";

@@ -14,4 +14,4 @@ WORKDIR /app
 
 COPY --from=build /app/out ./
 
-ENTRYPOINT ["dotnet", "F1Dashboard.Api.dll"]
+ENTRYPOINT ["dotnet", "F1Dashboard.API.dll"]

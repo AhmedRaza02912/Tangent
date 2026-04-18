@@ -4,7 +4,6 @@ using F1Dashboard.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllers()
 .AddJsonOptions(options =>
 {
@@ -31,6 +30,8 @@ builder.Services.AddScoped<NewsService>();
 builder.Services.AddScoped<RaceResultService>();
 builder.Services.AddScoped<SprintStatsService>();
 
+var allowedOrigins = builder.Configuration["AllowedOrigins"]?.Split(",")
+    ?? new[] { "http://localhost:5173" };
 
 builder.Services.AddCors(options =>
 {
@@ -38,23 +39,20 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins(allowedOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod();
         });
 });
+
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-app.UseHttpsRedirection();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseStaticFiles();
-
 app.UseCors("AllowReact");
-
 app.MapControllers();
 
-app.Run();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Run($"http://0.0.0.0:{port}");

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { driverImages } from "../../../utils/driverImages";
 import "./DriverStandings.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://tangent-1.onrender.com";
+
 export default function DriverStandings() {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ export default function DriverStandings() {
   );
 
   useEffect(() => {
-    fetch("http://localhost:5019/api/f1/drivers/standings")
+    fetch(`${API_BASE_URL}/api/f1/drivers/standings`)
       .then(res => {
         // console.log('Response status:', res.status);
         // console.log('Response headers:', res.headers);

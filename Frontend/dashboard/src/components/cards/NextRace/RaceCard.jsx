@@ -3,6 +3,8 @@ import CountdownCard from "../Countdown/CountdownCard";
 import raceImages from "../../../utils/raceImages";
 import "./RaceCard.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://tangent-1.onrender.com";
+
 export default function RaceCard() {
   const [race, setRace] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -11,7 +13,7 @@ export default function RaceCard() {
   useEffect(() => {
     async function fetchNextRace() {
       try {
-        const res = await fetch("/api/f1/nextrace");
+        const res = await fetch(`${API_BASE_URL}/api/f1/nextrace`);
         if (!res.ok) throw new Error("Failed to fetch next race");
         const data = await res.json();
         setRace(data);

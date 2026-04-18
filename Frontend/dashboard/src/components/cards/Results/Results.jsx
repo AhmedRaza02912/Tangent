@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { driverImages } from "../../../utils/driverImages";
 import "./Results.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://tangent-1.onrender.com";
+
 export default function Results() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ export default function Results() {
   );
 
   useEffect(() => {
-    fetch("http://localhost:5019/api/f1/races/last/results")
+    fetch(`${API_BASE_URL}/api/f1/races/last/results`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch race results");

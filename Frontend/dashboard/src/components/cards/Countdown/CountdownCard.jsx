@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./CountdownCard.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://tangent-1.onrender.com";
+
 function CountdownCard({ targetDate }) {
   const raceDate = useMemo(() => {
     if (!targetDate) return null;

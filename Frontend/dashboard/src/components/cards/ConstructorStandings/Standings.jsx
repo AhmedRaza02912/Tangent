@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import constructorImages from "../../../utils/constructorImages"
 import "./ConstructorStandings.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://tangent-1.onrender.com";
+
 export default function ConstructorStandings() {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ export default function ConstructorStandings() {
   );
 
   useEffect(() => {
-    fetch("http://localhost:5019/api/f1/constructors/standings") // adjust port if needed
+    fetch(`${API_BASE_URL}/api/f1/constructors/standings`) // adjust port if needed
       .then((res) => {
         if(!res.ok){
           throw new Error("Failed to fetch standings");

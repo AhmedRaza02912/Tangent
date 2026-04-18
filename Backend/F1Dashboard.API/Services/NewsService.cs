@@ -23,7 +23,11 @@ public class NewsService
         var client = _httpClientFactory.CreateClient("NewsApi");
         var apiKey = _config["NewsApi:ApiKey"];
 
-        var url = "everything?q=(Formula+1+OR+F1+OR+%22Grand+Prix%22+OR+%22Formula+One%22)+AND+(race+OR+driver+OR+championship+OR+qualifying+OR+regulation+OR+team)&language=en&sortBy=publishedAt&pageSize=12&domains=skysports.com,espn.com,formula1.com,autosport.com,motorsport.com,bbc.com,theguardian.com,racer.com&apiKey=6e2e751fe1a649e69dec0c7becee7cc6";
+        var url = "everything?q=(Formula+1+OR+F1+OR+%22Grand+Prix%22+OR+%22Formula+One%22)"+
+        "AND+(race+OR+driver+OR+championship+OR+qualifying+OR+regulation+OR+team)" +
+        "&language=en&sortBy=publishedAt&pageSize=12"+ 
+        "&domains=skysports.com,espn.com,formula1.com,autosport.com,motorsport.com,bbc.com,theguardian.com,racer.com" +
+        "&apiKey=6e2e751fe1a649e69dec0c7becee7cc6";
 
         var response = await client.GetAsync(url);
         var content = await response.Content.ReadAsStringAsync();

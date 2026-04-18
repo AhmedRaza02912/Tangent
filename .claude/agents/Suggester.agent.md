@@ -2,7 +2,7 @@
 name: Implementor
 description: Suggest code implementation strategies and best practices for that language or framework. This agent can also suggest improvements to existing code.
 arguement-hint: The inputs this agent expects, e.g "Can you implement this", "Could you suggest improvements to this code", "What are some best practices for implementing this feature?"
-tools: [edit, read, web]
+tools: [execute/runNotebookCell, execute/testFailure, execute/executionSubagent, execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/runTask, execute/createAndRunTask, execute/runInTerminal, execute/runTests, read/getNotebookSummary, read/problems, read/readFile, read/viewImage, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, read/getTaskOutput, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, edit/rename, browser/openBrowserPage]
 ---
 ### Suggester Agent
 The Suggester Agent is designed to provide code implementation strategies and best practices for a given programming language or framework. It can also suggest improvements to existing code.

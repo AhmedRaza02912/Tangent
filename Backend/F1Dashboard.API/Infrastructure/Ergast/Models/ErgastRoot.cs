@@ -62,7 +62,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         [JsonPropertyName("name")]
         public required string Name { get; set; }
     }
-    
+
     public class ErgastDriverStanding
     {
         [JsonPropertyName("position")]
@@ -99,7 +99,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("time")]
         public string? Time { get; set; }
-        
+
         [JsonPropertyName("Circuit")]
         public ErgastCircuit? Circuit { get; set; }
 
@@ -108,6 +108,9 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("Results")]
         public List<ErgastRaceResult>? Results { get; set; }
+
+        [JsonPropertyName("SprintResults")]
+        public List<ErgastSprintResult>? SprintResults { get; set; }
     }
 
     public class ErgastQualifyingResult
@@ -122,7 +125,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
     public class ErgastRaceResult
     {
         [JsonPropertyName("position")]
-        public string? Position {get;set;}
+        public string? Position { get; set; }
 
         [JsonPropertyName("status")]
         public required string Status { get; set; }
@@ -131,11 +134,11 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public required ErgastDriver Driver { get; set; }
 
         [JsonPropertyName("Time")]
-        public ErgastTime? Time {get;set;}
+        public ErgastTime? Time { get; set; }
 
         // ✅ FIXED: Changed from string to ErgastConstructor object
         [JsonPropertyName("Constructor")]  // Capital C to match JSON
-        public ErgastConstructor? Constructor {get;set;}
+        public ErgastConstructor? Constructor { get; set; }
     }
 
     // ---------------- DRIVER ----------------
@@ -161,14 +164,14 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public ErgastLocation? Location { get; set; }
 
         [JsonPropertyName("circuitId")]
-        public string CircuitId {get;set;} = string.Empty;
+        public string CircuitId { get; set; } = string.Empty;
     }
 
     public class ErgastLocation
     {
         [JsonPropertyName("country")]
         public string Country { get; set; } = string.Empty;
-        
+
         [JsonPropertyName("locality")]
         public string Locality { get; set; } = string.Empty;
     }
@@ -176,9 +179,28 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
     public class ErgastTime
     {
         [JsonPropertyName("millis")]
-        public string? Millis {get;set;}
-        
+        public string? Millis { get; set; }
+
         [JsonPropertyName("time")]
-        public string? Time {get;set;}
+        public string? Time { get; set; }
+    }
+
+    public class ErgastSprintResult
+    {
+        [JsonPropertyName("position")]
+        public string? Position { get; set; }
+
+        [JsonPropertyName("points")]
+        public string? Points { get; set; }
+
+        [JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        [JsonPropertyName("Driver")]
+        public required ErgastDriver Driver { get; set; }
+
+        [JsonPropertyName("Constructor")]
+        public ErgastConstructor? Constructor { get; set; }
+
     }
 }

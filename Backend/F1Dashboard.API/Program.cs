@@ -29,6 +29,7 @@ builder.Services.AddScoped<NextRaceService>();
 builder.Services.AddScoped<ConstructorService>();
 builder.Services.AddScoped<NewsService>();
 builder.Services.AddScoped<RaceResultService>();
+builder.Services.AddScoped<SprintStatsService>();
 
 
 builder.Services.AddCors(options =>

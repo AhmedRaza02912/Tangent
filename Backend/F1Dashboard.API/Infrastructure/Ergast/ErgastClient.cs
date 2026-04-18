@@ -53,6 +53,14 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
             return await response.Content.ReadAsStringAsync();
         }
         
+        public async Task<string> GetSprintResultsRawAsync()
+        {
+            var response = await _http.GetAsync(
+                $"https://api.jolpi.ca/ergast/f1/{year}/sprint/?limit=100"
+            );
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
         
     }
 }

@@ -50,7 +50,7 @@ public class SprintStatsService
                 if(posB <= 3) podiumsB++;
             }
         }
-        Console.WriteLine(root?.MRData?.RaceTable?.Races?.Count);
+        // Console.WriteLine(root?.MRData?.RaceTable?.Races?.Count);
 
         return (winsA, winsB, podiumsA, podiumsB);
     }

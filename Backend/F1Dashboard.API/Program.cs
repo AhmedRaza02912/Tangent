@@ -11,6 +11,7 @@ builder.Services.AddControllers()
 });
 
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<HeadToHeadService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient("NewsApi", client =>

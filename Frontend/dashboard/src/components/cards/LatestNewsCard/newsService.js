@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
 
 export const getF1News = async()=>{
     const res = await fetch(`${API_BASE_URL}/api/news/f1`);

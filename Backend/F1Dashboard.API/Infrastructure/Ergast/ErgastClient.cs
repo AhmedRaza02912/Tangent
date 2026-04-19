@@ -18,7 +18,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
         public async Task<string> GetQualifyingResultsRawAsync()
         {
             return await _http.GetStringAsync(
-                $"https://api.jolpi.ca/ergast/f1/{year}/qualifying/1.json"
+                $"https://api.jolpi.ca/ergast/f1/{year}/qualifying.json?limit=1000"
             );
         }
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getF1News } from "./newsService";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://tangent-1.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
 
 export default function F1NewsSection() {
 

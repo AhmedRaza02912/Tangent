@@ -12,10 +12,10 @@ export default function HeadToHead() {
 
   useEffect(() => {
     if (!driverA || !driverB) {
-      setStats(null);
+      setState(null);
       return;
     }
-
+      
     setLoading(true);
     fetch(`${API_BASE_URL}/api/headtohead?driver1=${driverA}&driver2=${driverB}`)
       .then((res) => res.json())
@@ -27,46 +27,43 @@ export default function HeadToHead() {
     <div className="driver-standings-card">
       <h3>Head to Head</h3>
 
-      {/* Selectors */}
+      {/* Selectors on opposite sides */}
       <div className="h2h-selectors">
         <select value={driverA} onChange={(e) => setDriverA(e.target.value)}>
           {!driverA && <option value="" disabled>Driver A</option>}
-          {Object.keys(driverImages)
-            .filter((d) => d !== driverB)
-            .map((d) => (
-              <option key={d} value={d}>{d}</option>
-            ))}
-        </select>
+    {Object.keys(driverImages)
+      .filter((d) => d !== driverB)
+      .map((d) => (
+        <option key={d} value={d}>{d}</option>
+      ))}
+  </select>
 
-        <select value={driverB} onChange={(e) => setDriverB(e.target.value)}>
-          {!driverB && <option value="" disabled>Driver B</option>}
-          {Object.keys(driverImages)
-            .filter((d) => d !== driverA)
-            .map((d) => (
-              <option key={d} value={d}>{d}</option>
-            ))}
-        </select>
-      </div>
+  <select value={driverB} onChange={(e) => setDriverB(e.target.value)}>
+    {!driverB && <option value="" disabled>Driver B</option>}
+    {Object.keys(driverImages)
+       .filter((d) => d !== driverA)
+      .map((d) => (
+        <option key={d} value={d}>{d}</option>
+      ))}
+  </select>
+</div>
 
-      {/* Main layout: on desktop = image | stats | image
-                       on mobile  = [imageA | imageB] stacked above stats */}
+      {/* Main layout: image | stats | image */}
       <div className="h2h-main">
-        {/* Images wrapped in a row so they sit side-by-side on mobile */}
-        <div className="h2h-drivers-row">
-          <DriverAvatar driver={driverA} side="left" />
-          <DriverAvatar driver={driverB} side="right" />
-        </div>
+        <DriverAvatar driver={driverA} side="left" />
 
         <div className="h2h-stats">
-          {stats && (
-            <>
-              <ComparisonRow label="Race Finish"     left={stats.driverAAheadRace}       right={stats.driverBAheadRace}       total={24} />
-              <ComparisonRow label="Qualifying"      left={stats.driverAAheadQuali}      right={stats.driverBAheadQuali}      total={24} />
-              <ComparisonRow label="Sprint Wins"     left={stats.driverASprintWins}      right={stats.driverBSprintWins}      total={6}  />
-              <ComparisonRow label="Sprint Podiums"  left={stats.driverASprintPodiums}   right={stats.driverBSprintPodiums}   total={6}  />
-            </>
-          )}
+{stats && (
+  <>
+    <ComparisonRow label="Race Finish" left={stats.driverAAheadRace} right={stats.driverBAheadRace} total={24} />
+    <ComparisonRow label="Qualifying" left={stats.driverAAheadQuali} right={stats.driverBAheadQuali} total={24} />
+    <ComparisonRow label="Sprint Wins" left={stats.driverASprintWins} right={stats.driverBSprintWins} total={6} />
+    <ComparisonRow label="Sprint Podiums" left={stats.driverASprintPodiums} right={stats.driverBSprintPodiums} total={6} />
+  </>
+)}
         </div>
+
+        <DriverAvatar driver={driverB} side="right" />
       </div>
     </div>
   );
@@ -85,7 +82,7 @@ function DriverAvatar({ driver, side }) {
 }
 
 function ComparisonRow({ label, left, right, total }) {
-  const leftPercent  = Math.min((left  / total) * 100, 100);
+  const leftPercent = Math.min((left / total) * 100, 100);
   const rightPercent = Math.min((right / total) * 100, 100);
 
   return (
@@ -96,9 +93,12 @@ function ComparisonRow({ label, left, right, total }) {
         <div className="comparison-bars">
           <div className="comparison-label">{label}</div>
           <div className="bar-row">
+            {/* Left bar grows from center toward left driver */}
             <div className="bar-track bar-track--left">
               <div className="bar-fill--left" style={{ width: `${leftPercent}%` }} />
             </div>
+
+            {/* Right bar grows from center toward right driver */}
             <div className="bar-track bar-track--right">
               <div className="bar-fill--right" style={{ width: `${rightPercent}%` }} />
             </div>

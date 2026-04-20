@@ -39,16 +39,17 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+ 
 }
 
 .h2h-driver--left img {
   object-position: right top;
-  background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
+   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
 }
 
 .h2h-driver--right img {
   object-position: right top;
-  background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
+   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
 }
 
 .driver-placeholder {
@@ -152,64 +153,4 @@
   background: linear-gradient(90deg, #cc0000, #ff4444);
   border-radius: 20px;
   transition: width 0.6s ease;
-}
-
-/* ── Mobile (max 768px) ── */
-@media (max-width: 768px) {
-  /* Selectors: stack vertically and go full width */
-  .h2h-selectors {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .h2h-selectors select {
-    width: 100%;
-  }
-
-  /* Main layout: switch from row to column */
-  .h2h-main {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  /* Driver images: side by side on top, shorter height */
-  .h2h-drivers-row {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .h2h-driver {
-    width: 50%;         /* each takes half the row */
-    height: 140px;
-    flex-shrink: 1;
-  }
-
-  /* Stats sit below the two images */
-  .h2h-stats {
-    width: 100%;
-  }
-
-  .comparison-label {
-    font-size: 10px;
-  }
-
-  .bar-value {
-    font-size: 12px;
-    width: 20px;
-  }
-}
-
-/* ── Small Mobile (max 480px) ── */
-@media (max-width: 480px) {
-  .h2h-driver {
-    height: 110px;
-  }
-
-  .comparison-label {
-    font-size: 9px;
-    letter-spacing: 0.2px;
-  }
 }

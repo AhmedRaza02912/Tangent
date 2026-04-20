@@ -5,13 +5,17 @@ import "./HeadToHead.css";
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
 export default function HeadToHead() {
-  const [driverA, setDriverA] = useState("hamilton");
-  const [driverB, setDriverB] = useState("leclerc");
+  const [driverA, setDriverA] = useState("DriverA");
+  const [driverB, setDriverB] = useState("DriverB");
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!driverA || !driverB) return;
+    if (!driverA || !driverB) {
+      setState(null);
+      return;
+    }
+      
     setLoading(true);
     fetch(`${API_BASE_URL}/api/headtohead?driver1=${driverA}&driver2=${driverB}`)
       .then((res) => res.json())
@@ -26,6 +30,7 @@ export default function HeadToHead() {
       {/* Selectors on opposite sides */}
       <div className="h2h-selectors">
         <select value={driverA} onChange={(e) => setDriverA(e.target.value)}>
+          {!driverA && <option value="" disabled>Driver A</option>}
     {Object.keys(driverImages)
       .filter((d) => d !== driverB)
       .map((d) => (
@@ -34,8 +39,9 @@ export default function HeadToHead() {
   </select>
 
   <select value={driverB} onChange={(e) => setDriverB(e.target.value)}>
+    {!driverB && <option value="" disabled>Driver B</option>}
     {Object.keys(driverImages)
-      .filter((d) => d !== driverA)
+       .filter((d) => d !== driverA)
       .map((d) => (
         <option key={d} value={d}>{d}</option>
       ))}

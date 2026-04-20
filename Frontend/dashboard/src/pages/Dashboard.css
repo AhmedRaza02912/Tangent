@@ -241,3 +241,147 @@
   text-align: center;
   color: #cbd5f5;
 }
+
+/* ── Tablet (max 1024px) ── */
+@media (max-width: 1024px) {
+  .dashboard-main-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .dashboard-bottom-row {
+    grid-column: 1 / span 2;
+  }
+
+  .dashboard-driver-standings,
+  .dashboard-constructor-standings {
+    max-height: 300px;
+  }
+
+  .dashboard-latest-news {
+    max-height: 500px;
+  }
+}
+
+/* ── Mobile (max 768px) ── */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 12px;
+  }
+
+  /* Stack everything into single column */
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Reset all grid placements */
+  .dashboard-next-race,
+  .dashboard-results-top,
+  .dashboard-latest-news,
+  .dashboard-left-column,
+  .dashboard-head-to-head,
+  .dashboard-bottom-row {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  /* News card — full width */
+  .dashboard-latest-news {
+    max-height: 400px;
+  }
+
+  /* Standings side by side on tablet/large mobile */
+  .dashboard-left-column {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-driver-standings,
+  .dashboard-constructor-standings {
+    flex: 1 1 280px;
+    max-height: 300px;
+  }
+
+  /* Top bar */
+  .top-bar {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* News cards */
+  .news-image {
+    width: 55px;
+    height: 45px;
+  }
+
+  .news-title {
+    font-size: 12px;
+  }
+
+  .news-meta {
+    min-width: 60px;
+  }
+}
+
+/* ── Small Mobile (max 480px) ── */
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 8px;
+  }
+
+  /* Stack standings vertically on small screens */
+  .dashboard-left-column {
+    flex-direction: column;
+  }
+
+  .dashboard-driver-standings,
+  .dashboard-constructor-standings {
+    max-height: 260px;
+  }
+
+  /* Head to Head — stack vertically */
+  .h2h-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .h2h-driver {
+    width: 100%;
+    height: 180px;
+  }
+
+  .h2h-selectors {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .h2h-selectors select {
+    width: 100%;
+  }
+
+  /* Upcoming races — 2 columns on small mobile */
+  .upcoming-races-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* News */
+  .news-description {
+    display: none;
+  }
+
+  .news-image {
+    width: 50px;
+    height: 40px;
+  }
+
+  .news-section-title {
+    font-size: 16px;
+  }
+
+  /* Next race countdown */
+  .top-bar {
+    justify-content: center;
+  }
+}

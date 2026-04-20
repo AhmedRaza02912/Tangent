@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import constructorImages from "../../../utils/constructorImages"
 import "./ConstructorStandings.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
 export default function ConstructorStandings() {
   const [teams, setTeams] = useState([]);

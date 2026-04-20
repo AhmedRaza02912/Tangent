@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { driverImages } from "../../../utils/driverImages";
 import "./DriverStandings.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
 export default function DriverStandings() {
   const [drivers, setDrivers] = useState([]);

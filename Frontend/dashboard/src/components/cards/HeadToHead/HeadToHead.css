@@ -39,14 +39,17 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+ 
 }
 
 .h2h-driver--left img {
   object-position: top left;
+   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
 }
 
 .h2h-driver--right img {
   object-position: top right;
+   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
 }
 
 .driver-placeholder {

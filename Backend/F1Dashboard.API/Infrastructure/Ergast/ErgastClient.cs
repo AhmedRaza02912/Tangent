@@ -62,5 +62,13 @@ namespace F1Dashboard.Api.Infrastructure.Ergast
             return await response.Content.ReadAsStringAsync();
         }
         
+        public async Task<string> GetSeasonScheduleAsync()
+        {
+            var response = await _http.GetAsync(
+                $"https://api.jolpi.ca/ergast/f1/{year}.json"
+            );
+            response.EnsureSuccessStatusCode();
+            return await response.Content.ReadAsStringAsync();
+        }
     }
 }

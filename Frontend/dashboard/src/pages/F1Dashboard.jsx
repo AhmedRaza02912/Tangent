@@ -2,7 +2,7 @@ import Top from "../components/TopBar/top.jsx";
 import RaceCard from "../components/cards/NextRace/RaceCard.jsx";
 import DriverStandings from "../components/cards/DriverStandings/Standings.jsx";
 import ConstructorStandings from "../components/cards/ConstructorStandings/Standings.jsx";
-import UpcomingEvents from "../components/cards/UpcomingEvents/Upcoming.jsx";
+import Upcoming from "../components/cards/UpcomingEvents/Upcoming.jsx";
 import LatestNews from "../components/cards/LatestNewsCard/NewsCard.jsx";
 import Results from "../components/cards/Results/Results.jsx";
 import HeadToHead  from "../components/cards/HeadToHead/HeadToHead.jsx";
@@ -41,7 +41,7 @@ export default function Dashboard({ activeSeries, onSeriesChange }) {
             </div>
         </div>
         <div className="dashboard-bottom-row">
-          <UpcomingEvents />
+          <Upcoming />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./CountdownCard.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5173";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
 function CountdownCard({ targetDate }) {
   const raceDate = useMemo(() => {

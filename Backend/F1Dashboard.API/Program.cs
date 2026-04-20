@@ -30,6 +30,7 @@ builder.Services.AddScoped<ConstructorService>();
 builder.Services.AddScoped<NewsService>();
 builder.Services.AddScoped<RaceResultService>();
 builder.Services.AddScoped<SprintStatsService>();
+builder.Services.AddScoped<UpcomingRacesService>();
 
 var allowedOrigins = builder.Configuration["AllowedOrigins"]?.Split(",")
     ?? new[] { "http://localhost:5173" };

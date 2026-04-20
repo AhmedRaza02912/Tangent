@@ -50,25 +50,28 @@ export default function Upcoming() {
   if (loading)
     return (
       <div className="upcoming-races-card">
+        < h3 className="upcoming-races-title">Upcoming Races This Month</h3>
         <p className="upcoming-status">Loading...</p>
       </div>
     );
   if (error)
     return (
       <div className="upcoming-races-card">
+        < h3 className="upcoming-races-title">Upcoming Races This Month</h3>
         <p className="upcoming-status">Failed to load races.</p>
       </div>
     );
   if (races.length === 0)
     return (
       <div className="upcoming-races-card">
+       < h3 className="upcoming-races-title">Upcoming Races This Month</h3>
         <p className="upcoming-status">No upcoming races.</p>
       </div>
     );
 
   return (
     <div className="upcoming-races-card">
-      <h3 className="upcoming-races-title">Upcoming Races</h3>
+      <h3 className="upcoming-races-title">Upcoming Races This Month</h3>
       <div className="upcoming-races-flex">
         {races.map((race) => {
           const img =

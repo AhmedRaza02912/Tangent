@@ -27,8 +27,6 @@ justify-content: center;
 }
 
 .race-card {
-    flex: 1 ;
-    min-width: 0;
   background: rgba(12, 18, 48, 0.8);
   border-radius: 12px;
   overflow: hidden;

@@ -26,12 +26,17 @@ public class UpcomingRacesService
         }
 
         var now = DateTime.UtcNow;
+        var nextRaces = races.Where(r => DateTime.TryParse(r.Date, out var d) && d >= now)
+        .OrderBy( r => DateTime.Parse(r.Date))
+        .FirstOrDefault();
 
         return races
         .Where(
             r =>
             {
                 if(!DateTime.TryParse(r.Date, out var date))
+                return false;
+                if(nextRaces != null && r.Round == nextRaces.Round)
                 return false;
                 return date > now && 
                 date <= now.AddDays(30);

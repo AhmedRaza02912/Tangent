@@ -303,8 +303,10 @@
     max-height: 300px;
   }
 
-  /* Top bar */
+  /* FIX 1: Force top bar to always center on mobile */
   .top-bar {
+    justify-content: center;
+    align-items: center;
     gap: 12px;
     flex-wrap: wrap;
   }
@@ -321,6 +323,35 @@
 
   .news-meta {
     min-width: 60px;
+  }
+
+  /* FIX 2: Constrain H2H card width and stack images vertically */
+  .dashboard-head-to-head {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .h2h-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .h2h-driver {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .h2h-selectors {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .h2h-selectors select {
+    width: 100%;
   }
 }
 
@@ -340,7 +371,7 @@
     max-height: 260px;
   }
 
-  /* Head to Head — stack vertically */
+  /* Head to Head — ensure column stacking persists */
   .h2h-main {
     flex-direction: column;
     align-items: center;

@@ -20,8 +20,8 @@ import russell from "../assets/Drivers/russell.png";
 import sainz from "../assets/Drivers/sainz.png";
 import verstappen from "../assets/Drivers/verstappen.png";
 import stroll from "../assets/Drivers/stroll.png";
-import DriverA from "../assets/Drivers/DriverA.png";
-import DriverB from "../assets/Drivers/DriverB.png";
+import DriverA from "../assets/Drivers/DriverA.jpg";
+import DriverB from "../assets/Drivers/DriverB.jpg";
 
 export const driverImages = {
     "DriverA": DriverA,

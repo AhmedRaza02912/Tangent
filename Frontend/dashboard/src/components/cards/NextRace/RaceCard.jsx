@@ -27,14 +27,40 @@ export default function RaceCard() {
     fetchNextRace();
   }, []);
 
-  const raceName = loading ? "Loading..." : error ? "Unavailable" : race?.raceName;
+  const raceName = loading
+    ? "Loading..."
+    : error
+      ? "Unavailable"
+      : race?.raceName;
   const raceDate = race ? new Date(`${race.date}T${race.time}`) : null;
-  const backgroundImage = race?.circuitId ? raceImages[race.circuitId] ?? null : null;
-
+  const backgroundImage = race?.circuitId
+    ? (raceImages[race.circuitId] ?? null)
+    : null;
+  const raceWeekend = race
+    ? {
+        raceName: race.raceName,
+        circuit: race.circuit,
+        sessions: [
+          {
+            id: "race",
+            name: "Race",
+            start: `${race.date}T${race.time}`,
+            end: new Date(
+              new Date(`${race.date}T${race.time}`).getTime() +
+                2 * 60 * 60 * 1000,
+            ).toISOString(), // +2 hours
+          },
+        ],
+      }
+    : null;
   return (
     <div
       className="card"
-      style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
+      style={
+        backgroundImage
+          ? { backgroundImage: `url(${backgroundImage})` }
+          : undefined
+      }
     >
       <div className="overlay"></div>
 
@@ -43,10 +69,11 @@ export default function RaceCard() {
           <h3 className="subHeader">Next Race</h3>
           <h2 className="header">{raceName}</h2>
           {race && (
-            <p className="subText">{race.circuit} — {race.country}</p>
+            <p className="subText">
+              {race.circuit} — {race.country}
+            </p>
           )}
         </div>
-        <div className="redBadge">Sync with Calendar</div>
       </div>
 
       <div className="countdownWrapper">

@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Ical.Net/5.2.1": {
+        "type": "package",
+        "dependencies": {
+          "NodaTime": "3.2.2"
+        },
+        "compile": {
+          "lib/net8.0/Ical.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Ical.Net.dll": {}
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -22,6 +34,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "NodaTime/3.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/NodaTime.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/NodaTime.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -92,6 +117,24 @@
     }
   },
   "libraries": {
+    "Ical.Net/5.2.1": {
+      "sha512": "zHjl8M24IX1kNlB2zX7c2clyTdD5C+PplmyiMHJ0kMlt0ng2TMfNNKO4u7hNV86oITujLiJ6y/+ATcI7bbmjAw==",
+      "type": "package",
+      "path": "ical.net/5.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "assets/icon.png",
+        "assets/logo.png",
+        "assets/readme.md",
+        "ical.net.5.2.1.nupkg.sha512",
+        "ical.net.nuspec",
+        "lib/net6.0/Ical.Net.dll",
+        "lib/net8.0/Ical.Net.dll",
+        "lib/netstandard2.0/Ical.Net.dll",
+        "lib/netstandard2.1/Ical.Net.dll"
+      ]
+    },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "sha512": "Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "type": "package",
@@ -338,6 +381,27 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "NodaTime/3.2.2": {
+      "sha512": "dmju5W0UYC3QP/UJM0juKAZkH0HSDMp0gH91A0+mT9M0kgyM2Jm67hUZPl/WRQLq8Lijjqmdk8kyAViWFWM7dA==",
+      "type": "package",
+      "path": "nodatime/3.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/NodaTime.dll",
+        "lib/net6.0/NodaTime.pdb",
+        "lib/net6.0/NodaTime.xml",
+        "lib/net8.0/NodaTime.dll",
+        "lib/net8.0/NodaTime.pdb",
+        "lib/net8.0/NodaTime.xml",
+        "lib/netstandard2.0/NodaTime.dll",
+        "lib/netstandard2.0/NodaTime.pdb",
+        "lib/netstandard2.0/NodaTime.xml",
+        "nodatime.3.2.2.nupkg.sha512",
+        "nodatime.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/6.6.2": {
       "sha512": "+NB4UYVYN6AhDSjW0IJAd1AGD8V33gemFNLPaxKTtPkHB+HaKAKf9MGAEUPivEWvqeQfcKIw8lJaHq6LHljRuw==",
       "type": "package",
@@ -443,6 +507,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Ical.Net >= 5.2.1",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -452,11 +517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\F1Dashboard.API.csproj",
+      "projectUniqueName": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.Api\\F1Dashboard.API.csproj",
       "projectName": "F1Dashboard.API",
-      "projectPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\F1Dashboard.API.csproj",
+      "projectPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.Api\\F1Dashboard.API.csproj",
       "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.API\\obj\\",
+      "outputPath": "C:\\Users\\Hp\\Desktop\\Tangent\\Backend\\F1Dashboard.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -489,6 +554,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Ical.Net": {
+            "target": "Package",
+            "version": "[5.2.1, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.6.2, )"

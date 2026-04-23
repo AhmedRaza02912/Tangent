@@ -102,6 +102,23 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
         [JsonPropertyName("Circuit")]
         public ErgastCircuit? Circuit { get; set; }
+        [JsonPropertyName("FirstPractice")]
+        public ErgastSession? FirstPractice { get; set; }
+
+        [JsonPropertyName("SecondPractice")]
+        public ErgastSession? SecondPractice { get; set; }
+
+        [JsonPropertyName("ThirdPractice")]
+        public ErgastSession? ThirdPractice { get; set; }
+
+        [JsonPropertyName("Qualifying")]
+        public ErgastSession? Qualifying { get; set; }
+
+        [JsonPropertyName("Sprint")]
+        public ErgastSession? Sprint { get; set; }
+
+        [JsonPropertyName("SprintQualifying")]
+        public ErgastSession? SprintQualifying { get; set; }
 
         [JsonPropertyName("QualifyingResults")]
         public List<ErgastQualifyingResult>? QualifyingResults { get; set; }
@@ -136,8 +153,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         [JsonPropertyName("Time")]
         public ErgastTime? Time { get; set; }
 
-        // ✅ FIXED: Changed from string to ErgastConstructor object
-        [JsonPropertyName("Constructor")]  // Capital C to match JSON
+        [JsonPropertyName("Constructor")]
         public ErgastConstructor? Constructor { get; set; }
     }
 
@@ -202,5 +218,14 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         [JsonPropertyName("Constructor")]
         public ErgastConstructor? Constructor { get; set; }
 
+    }
+
+    public class ErgastSession
+    {
+        [JsonPropertyName("date")]
+        public string Date { get; set; } = string.Empty;
+
+        [JsonPropertyName("time")]
+        public string Time { get; set; } = string.Empty;
     }
 }

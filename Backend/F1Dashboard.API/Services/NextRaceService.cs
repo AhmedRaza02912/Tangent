@@ -21,7 +21,7 @@ public class NextRaceService
 
         var race = root?.MRData?.RaceTable?.Races?.FirstOrDefault();
 
-        if(race == null)
+        if (race == null)
         {
             return null;
         }
@@ -34,7 +34,31 @@ public class NextRaceService
             CircuitId = race.Circuit.CircuitId,
             Date = race.Date,
             Time = race.Time ?? "00:00:00Z",
-            Round = int.Parse(race.Round)
+            Round = int.Parse(race.Round),
+
+            FirstPractice = race.FirstPractice == null ? null : new RaceSessionDto
+            {
+                Date = race.FirstPractice.Date,
+                Time = race.FirstPractice.Time
+            },
+
+            Qualifying = race.Qualifying == null ? null : new RaceSessionDto
+            {
+                Date = race.Qualifying.Date,
+                Time = race.Qualifying.Time
+            },
+
+            Sprint = race.Sprint == null ? null : new RaceSessionDto
+            {
+                Date = race.Sprint.Date,
+                Time = race.Sprint.Time
+            },
+            SprintQualifying = race.SprintQualifying == null ? null : new RaceSessionDto
+            {
+                Date = race.SprintQualifying.Date,
+                Time = race.SprintQualifying.Time
+            }
+
         };
     }
 }

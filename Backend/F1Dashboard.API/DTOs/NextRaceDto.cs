@@ -10,5 +10,13 @@ public class NextRaceDto
     public string Time{get; set;} = string.Empty;
     public int Round {get;set;}
 
+    public RaceSessionDto? FirstPractice { get; set; }
+    public RaceSessionDto? SecondPractice { get; set; }
+    public RaceSessionDto? ThirdPractice { get; set; }
+
+    public RaceSessionDto? Qualifying { get; set; }
+    public RaceSessionDto? Sprint { get; set; }
+    public RaceSessionDto? SprintQualifying { get; set; }
+
 
 }

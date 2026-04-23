@@ -33,9 +33,10 @@ public class NewsService
         var content = await response.Content.ReadAsStringAsync();
 
         var cacheOptions = new MemoryCacheEntryOptions().
-        SetAbsoluteExpiration(TimeSpan.FromMinutes(30));
+        SetAbsoluteExpiration(TimeSpan.FromMinutes(10));
 
         _cache.Set(CacheKey, content, cacheOptions);
+
         return content;
     }
 

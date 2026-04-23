@@ -31,7 +31,7 @@
   border-radius: 12px;
   overflow: hidden;
  box-shadow:
-    0 0 8px rgba(22, 89, 191, 0.9),   /* white glow */
+    0 0 8px rgba(22, 89, 191, 0.9),   /* blue glow */
     0 0 18px rgba(243, 233, 174, 0.8);   /* golden glow */
 }
 

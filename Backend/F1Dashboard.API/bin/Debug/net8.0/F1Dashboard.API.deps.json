@@ -8,10 +8,22 @@
     ".NETCoreApp,Version=v8.0": {
       "F1Dashboard.API/1.0.0": {
         "dependencies": {
+          "Ical.Net": "5.2.1",
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
           "F1Dashboard.API.dll": {}
+        }
+      },
+      "Ical.Net/5.2.1": {
+        "dependencies": {
+          "NodaTime": "3.2.2"
+        },
+        "runtime": {
+          "lib/net8.0/Ical.Net.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.1.0"
+          }
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -20,6 +32,14 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.6.14.0",
             "fileVersion": "1.6.14.0"
+          }
+        }
+      },
+      "NodaTime/3.2.2": {
+        "runtime": {
+          "lib/net8.0/NodaTime.dll": {
+            "assemblyVersion": "3.2.2.0",
+            "fileVersion": "3.2.2.0"
           }
         }
       },
@@ -69,6 +89,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Ical.Net/5.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zHjl8M24IX1kNlB2zX7c2clyTdD5C+PplmyiMHJ0kMlt0ng2TMfNNKO4u7hNV86oITujLiJ6y/+ATcI7bbmjAw==",
+      "path": "ical.net/5.2.1",
+      "hashPath": "ical.net.5.2.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
       "serviceable": true,
@@ -82,6 +109,13 @@
       "sha512": "sha512-tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
       "path": "microsoft.openapi/1.6.14",
       "hashPath": "microsoft.openapi.1.6.14.nupkg.sha512"
+    },
+    "NodaTime/3.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dmju5W0UYC3QP/UJM0juKAZkH0HSDMp0gH91A0+mT9M0kgyM2Jm67hUZPl/WRQLq8Lijjqmdk8kyAViWFWM7dA==",
+      "path": "nodatime/3.2.2",
+      "hashPath": "nodatime.3.2.2.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.6.2": {
       "type": "package",

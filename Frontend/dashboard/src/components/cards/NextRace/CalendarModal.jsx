@@ -31,6 +31,7 @@ export default function CalendarModal({ open, setOpen, race }) {
     });
 
     const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
 
     // will help in telling if the correct file reaches the android device
     // console.log("Blob size:", blob.size);
@@ -38,7 +39,6 @@ export default function CalendarModal({ open, setOpen, race }) {
     const a = document.createElement("a");
     if(isMobile){
       window.open(url, "_blank");
-      setDownloaded(true);
     }
     else{
       a.href = url;

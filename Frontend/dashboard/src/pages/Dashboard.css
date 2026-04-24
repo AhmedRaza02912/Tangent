@@ -361,6 +361,7 @@
   }
   
   .top-bar{
+    flex-direction: row;
     justify-content: center;
     gap: 8px;
   }
@@ -380,6 +381,17 @@
     flex-direction: row;
     align-items: stretch;
     gap: 12px;
+  }
+  .h2h-selectors {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    flex-direction: row;     
+    justify-content: space-between;
+    gap: 8px;
+    z-index: 10;
+    pointer-events: none;
   }
 
   .h2h-driver {

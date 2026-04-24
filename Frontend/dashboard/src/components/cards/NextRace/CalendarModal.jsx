@@ -35,8 +35,6 @@ export default function CalendarModal({ open, setOpen, race }) {
     // will help in telling if the correct file reaches the android device
     // console.log("Blob size:", blob.size);
     // console.log("Blob type:", blob.type);
-
-    const fixedBlob = new Blob([blob], {type: mimeType});
     const url = window.URL.createObjectURL(fixedBlob);
 
     const a = document.createElement("a");

@@ -1,12 +1,12 @@
-.h2h-selectors {
+.h2h-side {
+  width: 160px;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.h2h-selectors select {
-  width: 160px;
+.h2h-side select {
+  width: 100%;
   padding: 7px 10px;
   background: #0c1230;
   color: white;
@@ -19,7 +19,8 @@
 /* Main 3-column layout */
 .h2h-main {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -70,6 +71,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-top: 40px;
 }
 
 .comparison-row {
@@ -154,4 +156,43 @@
   background: linear-gradient(90deg, #cc0000, #ff4444);
   border-radius: 20px;
   transition: width 0.6s ease;
+}
+
+@media (max-width: 786px) {
+  .h2h-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 1.1fr) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+  }
+
+  .h2h-side--left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .h2h-side--right {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .h2h-side {
+    width: 100%;
+  }
+
+  .h2h-side select {
+    width: 100%;
+  }
+
+  .h2h-driver {
+    width: 100%;
+    height: 170px;
+  }
+
+  .h2h-stats {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 40px;
+    margin-top: 0;
+  }
 }

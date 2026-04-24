@@ -27,30 +27,19 @@ export default function HeadToHead() {
     <div className="driver-standings-card">
       <h3>Head to Head</h3>
 
-      {/* Selectors on opposite sides */}
-      <div className="h2h-selectors">
-        <select value={driverA} onChange={(e) => setDriverA(e.target.value)}>
-          {!driverA && <option value="" disabled>Driver A</option>}
-    {Object.keys(driverImages)
-      .filter((d) => d !== driverB)
-      .map((d) => (
-        <option key={d} value={d}>{d}</option>
-      ))}
-  </select>
-
-  <select value={driverB} onChange={(e) => setDriverB(e.target.value)}>
-    {!driverB && <option value="" disabled>Driver B</option>}
-    {Object.keys(driverImages)
-       .filter((d) => d !== driverA)
-      .map((d) => (
-        <option key={d} value={d}>{d}</option>
-      ))}
-  </select>
-</div>
-
       {/* Main layout: image | stats | image */}
       <div className="h2h-main">
-        <DriverAvatar driver={driverA} side="left" />
+        <div className="h2h-side h2h-side--left">
+          <select value={driverA} onChange={(e) => setDriverA(e.target.value)}>
+            {!driverA && <option value="" disabled>Driver A</option>}
+            {Object.keys(driverImages)
+              .filter((d) => d !== driverB)
+              .map((d) => (
+                <option key={d} value={d}>{d}</option>
+              ))}
+          </select>
+          <DriverAvatar driver={driverA} side="left" />
+        </div>
 
         <div className="h2h-stats">
 {stats && (
@@ -63,7 +52,17 @@ export default function HeadToHead() {
 )}
         </div>
 
-        <DriverAvatar driver={driverB} side="right" />
+        <div className="h2h-side h2h-side--right">
+          <select value={driverB} onChange={(e) => setDriverB(e.target.value)}>
+            {!driverB && <option value="" disabled>Driver B</option>}
+            {Object.keys(driverImages)
+              .filter((d) => d !== driverA)
+              .map((d) => (
+                <option key={d} value={d}>{d}</option>
+              ))}
+          </select>
+          <DriverAvatar driver={driverB} side="right" />
+        </div>
       </div>
     </div>
   );

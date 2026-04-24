@@ -39,7 +39,7 @@ public class UpcomingRacesService
                 if(nextRaces != null && r.Round == nextRaces.Round)
                 return false;
                 return date > now && 
-                date <= now.AddDays(30);
+                date <= now.AddDays(50);
             }
         )
         .Select(r => new NextRaceDto

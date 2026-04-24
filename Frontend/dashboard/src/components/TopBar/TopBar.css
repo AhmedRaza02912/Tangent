@@ -1,9 +1,13 @@
-.nav-buttons {
+.topbar-nav-buttons {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
   gap: 30px;
 }
 
-.button {
+.topbar-button {
   background: linear-gradient(
     to bottom right,
     rgb(114, 94, 94),
@@ -23,26 +27,61 @@
   font-weight: bold;
 }
 
-.button img {
+.topbar-button img {
   display: block;
 }
 
-.button:hover {
+.topbar-button:hover {
   background: linear-gradient(
     to bottom right,
     rgb(105, 39, 1),
     black
   );
 }
+.button-wrapper {
+  position: relative;
+}
 
+/* Tooltip style */
+.coming-soon {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: #111;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0.95;
+  animation: fadeInOut 2s ease;
+  z-index: 5;
+}
+
+
+/* Smooth animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -5px); }
+  20% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -5px); }
+}
 @media (max-width: 786px) {
-  .nav-buttons {
-    justify-content: center;
+  .topbar-nav-buttons {
+    gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .button {
+  .topbar-button {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;

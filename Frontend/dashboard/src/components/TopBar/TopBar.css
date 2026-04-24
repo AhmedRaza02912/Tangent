@@ -1,11 +1,12 @@
-.nav-buttons{
-    display: flex;
-    gap: 30px;
+.nav-buttons {
+  display: flex;
+  gap: 30px;
 }
-.button{
-  background:linear-gradient(
+
+.button {
+  background: linear-gradient(
     to bottom right,
-    rgb(114, 94, 94), 
+    rgb(114, 94, 94),
     black
   );
   display: inline-flex;
@@ -26,10 +27,24 @@
   display: block;
 }
 
-.button:hover{
+.button:hover {
   background: linear-gradient(
     to bottom right,
-    rgb(105, 39, 1), 
+    rgb(105, 39, 1),
     black
   );
+}
+
+@media (max-width: 786px) {
+  .nav-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .button {
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
 }

@@ -303,7 +303,6 @@
     max-height: 300px;
   }
 
-  /* FIX 1: Force top bar to always center on mobile */
   .top-bar {
     justify-content: center;
     align-items: center;

@@ -32,7 +32,7 @@ namespace F1Dashboard.API.Controllers
                 request.SelectedEvents,
                 request.ReminderMinutes
             );
-
+            Response.Headers.Append("Content-Disposition", $"attachment; filename=\"{race.RaceName}.ics\"");
             return File(fileBytes, "text/calendar", "f1.ics");
         }
     }

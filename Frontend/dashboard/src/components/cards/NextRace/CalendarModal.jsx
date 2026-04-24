@@ -3,6 +3,7 @@ import "./CalendarModal.css";
 
 export default function CalendarModal({ open, setOpen, race }) {
   const [selectedEvents, setSelectedEvents] = useState(["Race"]);
+  const [downloaded, setDownloaded] = useState(false);
   const [reminder, setReminder] = useState(0);
 
   if (!open) return null;
@@ -29,12 +30,18 @@ export default function CalendarModal({ open, setOpen, race }) {
     });
 
     const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
+    const url = window.URL.createObjectURL(
+      new Blob([blob], {type: "text/calendar"})
+    );
 
     const a = document.createElement("a");
     a.href = url;
     a.download = `${race.raceName}.ics`;
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+    setDownloaded(true);
   };
 
   return (
@@ -50,6 +57,7 @@ export default function CalendarModal({ open, setOpen, race }) {
                 type="checkbox"
                 checked={selectedEvents.includes(event)}
                 onChange={() => toggleEvent(event)}
+                disabled = {downloaded}
               />
               {event.toUpperCase()}
             </label>
@@ -62,6 +70,7 @@ export default function CalendarModal({ open, setOpen, race }) {
           <select
             value={reminder}
             onChange={(e) => setReminder(Number(e.target.value))}
+            disabled = {downloaded}
           >
             <option value={0}>No Reminder</option>
             <option value={10}>10 mins before</option>
@@ -76,10 +85,12 @@ export default function CalendarModal({ open, setOpen, race }) {
 
           <button
             className="download-btn"
-            disabled={selectedEvents.length === 0}
+            disabled={selectedEvents.length === 0 || downloaded}
             onClick={handleDownload}
+          
           >
             Download .ics
+           
           </button>
         </div>
       </div>

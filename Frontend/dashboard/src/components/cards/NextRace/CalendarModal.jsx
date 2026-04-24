@@ -17,9 +17,7 @@ export default function CalendarModal({ open, setOpen, race }) {
   };
 
   const handleDownload = async () => {
-    try{
-
-    
+    const isAndroid = /Android/i.test(navigator.userAgent);
     const response = await fetch("/api/ics/download-ics", {
       method: "POST",
       headers: {
@@ -33,9 +31,14 @@ export default function CalendarModal({ open, setOpen, race }) {
     });
 
     const blob = await response.blob();
-    const url = window.URL.createObjectURL(
-      new Blob([blob], {type: "text/calendar"})
-    );
+
+    // will help in telling if the correct file reaches the android device
+    // console.log("Blob size:", blob.size);
+    // console.log("Blob type:", blob.type);
+
+    const mimeType = isAndroid ? "application/octet-stream" : "text/calendar";
+    const fixedBlob = new Blob([blob], {type: mimeType});
+    const url = window.URL.createObjectURL(fixedBlob);
 
     const a = document.createElement("a");
     a.href = url;
@@ -45,10 +48,6 @@ export default function CalendarModal({ open, setOpen, race }) {
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
     setDownloaded(true);
-  }
-  catch(err){
-    alert(err.messsage);
-  }
   };
 
   return (

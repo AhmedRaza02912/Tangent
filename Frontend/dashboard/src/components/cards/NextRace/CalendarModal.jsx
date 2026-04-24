@@ -17,7 +17,7 @@ export default function CalendarModal({ open, setOpen, race }) {
   };
 
   const handleDownload = async () => {
-    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
     const response = await fetch("/api/ics/download-ics", {
       method: "POST",
       headers: {
@@ -36,16 +36,21 @@ export default function CalendarModal({ open, setOpen, race }) {
     // console.log("Blob size:", blob.size);
     // console.log("Blob type:", blob.type);
 
-    const mimeType = isAndroid ? "application/octet-stream" : "text/calendar";
     const fixedBlob = new Blob([blob], {type: mimeType});
     const url = window.URL.createObjectURL(fixedBlob);
 
     const a = document.createElement("a");
-    a.href = url;
-    a.download = `${race.raceName}.ics`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    if(isMobile){
+      window.open(url, "_blank");
+      setDownloaded(true);
+    }
+    else{
+      a.href = url;
+      a.download = `${race.raceName}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
     window.URL.revokeObjectURL(url);
     setDownloaded(true);
   };

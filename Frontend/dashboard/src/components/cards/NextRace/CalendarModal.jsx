@@ -17,6 +17,9 @@ export default function CalendarModal({ open, setOpen, race }) {
   };
 
   const handleDownload = async () => {
+    try{
+
+    
     const response = await fetch("/api/ics/download-ics", {
       method: "POST",
       headers: {
@@ -42,6 +45,10 @@ export default function CalendarModal({ open, setOpen, race }) {
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
     setDownloaded(true);
+  }
+  catch(err){
+    alert(err.messsage);
+  }
   };
 
   return (

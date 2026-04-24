@@ -1,22 +1,35 @@
 .nav-buttons{
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 .button{
-  background: rgba(20, 20, 40, 0.95);
+  background:linear-gradient(
+    to bottom right,
+    rgb(114, 94, 94), 
+    black
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 6px 16px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1;
   cursor: pointer;
   font-weight: bold;
 }
-.button:hover{
-  background-color: #161616;
-  transition: 0.5s ease;
+
+.button img {
+  display: block;
 }
 
-.button-active {
-  background-color: #2563eb;
+.button:hover{
+  background: linear-gradient(
+    to bottom right,
+    rgb(105, 39, 1), 
+    black
+  );
 }

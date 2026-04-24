@@ -25,7 +25,7 @@ public class NewsService
 
         var url = "everything?q=(Formula+1+OR+F1+OR+%22Grand+Prix%22+OR+%22Formula+One%22)"+
         "AND+(race+OR+driver+OR+championship+OR+qualifying+OR+regulation+OR+team)" +
-        "&language=en&sortBy=publishedAt&pageSize=12"+ 
+        "&language=en&sortBy=publishedAt&pageSize=10"+ 
         "&domains=skysports.com,espn.com,formula1.com,autosport.com,motorsport.com,bbc.com,theguardian.com,racer.com" +
         $"&apiKey={apiKey}";
 
@@ -33,7 +33,7 @@ public class NewsService
         var content = await response.Content.ReadAsStringAsync();
 
         var cacheOptions = new MemoryCacheEntryOptions().
-        SetAbsoluteExpiration(TimeSpan.FromMinutes(10));
+        SetAbsoluteExpiration(TimeSpan.FromMinutes(30));
 
         _cache.Set(CacheKey, content, cacheOptions);
 

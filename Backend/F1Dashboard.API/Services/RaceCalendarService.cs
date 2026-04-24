@@ -11,25 +11,45 @@ public class RaceCalendarService
 {
     public byte[] GenerateRaceCalendar(NextRaceDto race, List<string> selectedEvents, int reminderMinutes)
     {
-        var calendar = new Calendar();
 
+        var calendar = new Calendar{
+            Method = "PUBLISH"
+        };
+        calendar.AddProperty("CALSCALE", "GREGORIAN");
         void AddEvent(string name, DateTime dateTime)
         {
+            var utcDateTime = dateTime.Kind == DateTimeKind.Utc
+                ? dateTime
+                : dateTime.ToUniversalTime();
+
             var e = new CalendarEvent
             {
                 Summary = $"{race.RaceName} - {name}",
-                Start = new CalDateTime(dateTime.ToUniversalTime()),
-                End = new CalDateTime(dateTime.AddHours(2).ToUniversalTime()),
+                Start = new CalDateTime(utcDateTime),
+                End = new CalDateTime(utcDateTime.AddHours(2)),
                 Description = $"{race.RaceName} - {race.Circuit}",
-                Location = race.Country
+                Location = race.Country,
 
+                Uid = Guid.NewGuid().ToString(),
+                DtStamp = new CalDateTime(DateTime.UtcNow),
+
+                Status = EventStatus.Confirmed,
+                Transparency = TransparencyType.Opaque
             };
-            e.Alarms.Add(new Alarm
+            
+            e.AddProperty("CLASS", "PUBLIC");
+            // e.AddProperty("ORGANIZER", "mailto:no-reply@f1calendar.com");
+
+            if (reminderMinutes > 0)
             {
-                Action = AlarmAction.Display,
-                Trigger = new Trigger(new Duration(minutes: -(int)reminderMinutes)),
-                Description = $"{name} starting soon" 
-            });
+                e.Alarms.Add(new Alarm
+                {
+                    Action = AlarmAction.Display,
+                    Trigger = new Trigger(new Duration(minutes: -(int)reminderMinutes)),
+                    Description = $"{name} starting soon"
+                });
+            }
+
             calendar.Events.Add(e);
         }
         DateTime raceTime = DateTime.SpecifyKind(
@@ -48,28 +68,42 @@ public class RaceCalendarService
         }
         if (selectedEvents.Contains("Sprint") && race.Sprint != null)
         {
-            AddEvent("Sprint", DateTime.Parse($"{race.Sprint.Date}T{race.Sprint.Time}"));
+            AddEvent("Sprint", DateTime.SpecifyKind(
+    DateTime.Parse($"{race.Sprint.Date}T{race.Sprint.Time}"),
+    DateTimeKind.Utc
+));
         }
         if (selectedEvents.Contains("SprintQualifying") && race.SprintQualifying != null)
         {
-            AddEvent("Sprint Qualifying", DateTime.Parse($"{race.SprintQualifying.Date}T{race.SprintQualifying.Time}"));
+            AddEvent("Sprint Qualifying", DateTime.SpecifyKind(
+            DateTime.Parse($"{race.SprintQualifying.Date}T{race.SprintQualifying.Time}"),
+            DateTimeKind.Utc
+    ));
         }
         if (selectedEvents.Contains("FP1") && race.FirstPractice != null)
         {
-            AddEvent("FP1", DateTime.Parse($"{race.FirstPractice.Date}T{race.FirstPractice.Time}"));
+            AddEvent("FP1", DateTime.SpecifyKind(
+            DateTime.Parse($"{race.FirstPractice.Date}T{race.FirstPractice.Time}"),
+            DateTimeKind.Utc
+    ));
         }
         if (selectedEvents.Contains("FP2") && race.SecondPractice != null)
         {
-            AddEvent("FP2", DateTime.Parse($"{race.SecondPractice.Date}T{race.SecondPractice.Time}"));
+            AddEvent("FP2", DateTime.SpecifyKind(
+            DateTime.Parse($"{race.SecondPractice.Date}T{race.SecondPractice.Time}"),
+            DateTimeKind.Utc
+    ));
         }
         if (selectedEvents.Contains("FP3") && race.ThirdPractice != null)
         {
-            AddEvent("FP3", DateTime.Parse($"{race.ThirdPractice.Date}T{race.ThirdPractice.Time}"));
+        AddEvent("FP3", DateTime.SpecifyKind(
+        DateTime.Parse($"{race.ThirdPractice.Date}T{race.ThirdPractice.Time}"),
+        DateTimeKind.Utc
+));
         }
 
         var serializer = new CalendarSerializer();
         var serializedCalendar = serializer.SerializeToString(calendar);
-
         return Encoding.UTF8.GetBytes(serializedCalendar);
     }
 

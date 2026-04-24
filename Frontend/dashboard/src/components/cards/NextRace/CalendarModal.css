@@ -1,0 +1,75 @@
+.modal-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.modal {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 16px;
+  width: 360px;
+  color: white;
+  animation: fadeIn 0.3s ease;
+}
+
+.events label {
+  display: block;
+  margin: 10px 0;
+}
+
+.reminder {
+  margin-top: 15px;
+}
+.reminder select{
+    width: 120px;
+    height: 23px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(7, 35, 92);
+    border-radius: 10px;
+    font-weight: bold;
+}
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.actions button{
+    background: #03374ae2;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+}
+.actions .download-btn {
+  background: #02084f;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

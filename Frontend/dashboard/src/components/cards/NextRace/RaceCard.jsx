@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CountdownCard from "../Countdown/CountdownCard";
 import raceImages from "../../../utils/raceImages";
+import CalendarModal from './CalendarModal';
 import "./RaceCard.css";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
@@ -9,6 +10,8 @@ export default function RaceCard() {
   const [race, setRace] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const[open, setOpen] = useState(false);
 
   useEffect(() => {
     async function fetchNextRace() {
@@ -73,12 +76,21 @@ export default function RaceCard() {
               {race.circuit} — {race.country}
             </p>
           )}
-        </div>
-      </div>
 
+        </div>
+        <button className="calendar-btn" onClick={() => setOpen(true)}>
+          Add To Calendar
+        </button>
+      </div>
       <div className="countdownWrapper">
         <CountdownCard targetDate={raceDate} />
       </div>
+      {open && (
+        <CalendarModal 
+          open = {open}
+          setOpen = {setOpen}
+          race = {race} />
+      )}
     </div>
   );
 }

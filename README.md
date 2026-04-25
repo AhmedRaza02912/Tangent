@@ -3,7 +3,7 @@
 
 ## What is Tangent?
 
-Tangent is a web application designed for Formula 1 enthusiasts who want everything they need in one clean, fast interface. From live standings to race scheduling, Tangent keeps you plugged into the season without the noise.
+Tangent is a web application designed for Formula 1 enthusiasts who want everything they need in one clean, fast interface. From live standings to race scheduling, Tangent keeps you plugged into the season without the noise. When the idea came to my mind the F1 website did not have their 'Add To Calendar' feature.
 
 ---
 

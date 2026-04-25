@@ -26,12 +26,18 @@ namespace F1Dashboard.API.Controllers
         public async Task<IActionResult> DownloadCalendar([FromBody] CalendarRequest request)
         {
             var race = await _service.GetNextRaceAsync();
+            if (race == null)
+            return BadRequest("race_null: GetNextRaceAsync returned null");
 
+             if (string.IsNullOrEmpty(race.Date) || string.IsNullOrEmpty(race.Time))
+            return BadRequest($"race_data_incomplete: Date={race.Date} Time={race.Time}");
             var fileBytes = _calendarService.GenerateRaceCalendar(
                 race,
                 request.SelectedEvents,
                 request.ReminderMinutes
             );
+            if (fileBytes.Length == 0)
+            return BadRequest($"empty_ics: Race={race.RaceName}, FP1={race.FirstPractice?.Date}, Quali={race.Qualifying?.Date}, Selected={string.Join(",", request.SelectedEvents)}");
             return File(fileBytes, "text/calendar", "f1.ics");
         }
     }

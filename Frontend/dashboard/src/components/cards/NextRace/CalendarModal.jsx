@@ -7,7 +7,7 @@ export default function CalendarModal({ open, setOpen, race }) {
   const [reminder, setReminder] = useState(0);
 
   if (!open) return null;
-
+  const API_BASE = import.meta.env.VITE_API_URL;
   const toggleEvent = (event) => {
     setSelectedEvents((prev) =>
       prev.includes(event)
@@ -17,7 +17,7 @@ export default function CalendarModal({ open, setOpen, race }) {
   };
 
   const handleDownload = async () => {
-      const response = await fetch("/api/ics/download-ics", {
+      const response = await fetch(`${API_BASE}/api/ics/download-ics`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

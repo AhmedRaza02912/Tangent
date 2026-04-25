@@ -25,22 +25,16 @@ namespace F1Dashboard.API.Controllers
         [HttpPost("download-ics")]
         public async Task<IActionResult> DownloadCalendar([FromBody] CalendarRequest request)
         {
-             Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
-             Response.Headers["Pragma"] = "no-cache";
-            var race = await _service.GetNextRaceAsync();
-            if (race == null)
-            return BadRequest("race_null: GetNextRaceAsync returned null");
+            Response.Headers["Cache-Control"] = "no-store";
 
-             if (string.IsNullOrEmpty(race.Date) || string.IsNullOrEmpty(race.Time))
-            return BadRequest($"race_data_incomplete: Date={race.Date} Time={race.Time}");
+            var race = await _service.GetNextRaceAsync();
+            if (race == null) return NotFound();
+
             var fileBytes = _calendarService.GenerateRaceCalendar(
-                race,
-                request.SelectedEvents,
-                request.ReminderMinutes
+                race, request.SelectedEvents, request.ReminderMinutes
             );
-            if (fileBytes.Length == 0)
-            return BadRequest($"empty_ics: Race={race.RaceName}, FP1={race.FirstPractice?.Date}, Quali={race.Qualifying?.Date}, Selected={string.Join(",", request.SelectedEvents)}");
-            return File(fileBytes, "text/calendar", "f1.ics");
+
+            return File(fileBytes, "text/calendar", $"{race.RaceName}.ics");
         }
     }
 }

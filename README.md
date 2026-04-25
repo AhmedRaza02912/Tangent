@@ -41,7 +41,7 @@ This is where Tangent really shines. With the **Download ICS** feature, you can 
 
 To add a race to your calendar:
 1. Navigate to the **Upcoming Races** section.
-2. Click the **Download ICS** button next to any race.
+2. Click the **Add To Calendar** button.
 3. Open the downloaded `.ics` file — your calendar app will do the rest.
 
 ---

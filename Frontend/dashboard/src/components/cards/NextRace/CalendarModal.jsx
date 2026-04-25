@@ -32,7 +32,7 @@ export default function CalendarModal({ open, setOpen, race }) {
         throw new Error(`ICS download failed (${response.status})`);
       }
       const blob = await response.blob();
-      if (blob.size === 0) {
+      if (blob.size === 0) { // incase results is empty
         throw new Error("Received an empty ICS file from the server");
       }
       const url = window.URL.createObjectURL(blob);

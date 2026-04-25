@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* do not remove*/
 }
 .overlay {
   position: absolute;

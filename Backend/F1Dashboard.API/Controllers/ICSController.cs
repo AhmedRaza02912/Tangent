@@ -25,6 +25,8 @@ namespace F1Dashboard.API.Controllers
         [HttpPost("download-ics")]
         public async Task<IActionResult> DownloadCalendar([FromBody] CalendarRequest request)
         {
+             Response.Headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
+             Response.Headers["Pragma"] = "no-cache";
             var race = await _service.GetNextRaceAsync();
             if (race == null)
             return BadRequest("race_null: GetNextRaceAsync returned null");

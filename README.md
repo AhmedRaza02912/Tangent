@@ -46,7 +46,7 @@ To add a race to your calendar:
 
 ---
 
-## 📬 Feedback & Support
+## 📬 What the future holds
 I already plan to add MotoGP, Tennis and BasketBall in this project, and I am currently working on the MotoGP side of things
 but the API services are not as rich as they are for F1.
 

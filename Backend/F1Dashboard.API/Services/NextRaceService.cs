@@ -41,6 +41,17 @@ public class NextRaceService
                 Date = race.FirstPractice.Date,
                 Time = race.FirstPractice.Time
             },
+            SecondPractice = race.SecondPractice == null ? null : new RaceSessionDto
+            {
+                Date = race.SecondPractice.Date,
+                Time = race.SecondPractice.Time
+            },
+
+            ThirdPractice = race.ThirdPractice == null ? null : new RaceSessionDto
+            {
+                Date = race.ThirdPractice.Date,
+                Time = race.ThirdPractice.Time
+            },
 
             Qualifying = race.Qualifying == null ? null : new RaceSessionDto
             {

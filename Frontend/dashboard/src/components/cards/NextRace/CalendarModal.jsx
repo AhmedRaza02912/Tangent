@@ -23,6 +23,7 @@ export default function CalendarModal({ open, setOpen, race }) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          race,
           selectedEvents,
           reminderMinutes: reminder
         })

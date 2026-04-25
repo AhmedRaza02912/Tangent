@@ -17,40 +17,32 @@ export default function CalendarModal({ open, setOpen, race }) {
   };
 
   const handleDownload = async () => {
-    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-    const response = await fetch("/api/ics/download-ics", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        race,
-        selectedEvents,
-        reminderMinutes: reminder
-      })
-    });
-
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
-
-    // will help in telling if the correct file reaches the android device
-    // console.log("Blob size:", blob.size);
-    // console.log("Blob type:", blob.type);
-    const a = document.createElement("a");
-    if(isMobile){
-      window.open(url, "_blank");
-    }
-    else{
+      const response = await fetch("/api/ics/download-ics", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          selectedEvents,
+          reminderMinutes: reminder
+        })
+      });
+      if (!response.ok) {
+        throw new Error(`ICS download failed (${response.status})`);
+      }
+      const blob = await response.blob();
+      if (blob.size === 0) {
+        throw new Error("Received an empty ICS file from the server");
+      }
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
       a.href = url;
       a.download = `${race.raceName}.ics`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-    }
-    window.URL.revokeObjectURL(url);
-    setDownloaded(true);
+      setDownloaded(true);
   };
-
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -103,4 +95,5 @@ export default function CalendarModal({ open, setOpen, race }) {
       </div>
     </div>
   );
+
 }

@@ -45,7 +45,7 @@ public class RaceResultService
                     {
                         gap = r.Time.Time;
                     }
-                    else if(r.Status == "Finished")
+                    else if(r.Status == "Retired" && r.Time.Time != null)
                     {
                         gap = "Finished";
                     }

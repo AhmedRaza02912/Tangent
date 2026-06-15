@@ -45,6 +45,10 @@ public class RaceResultService
                     {
                         gap = r.Time.Time;
                     }
+                    else if(r.Status == "Finished")
+                    {
+                        gap = "Finished";
+                    }
                     else
                     {
                         gap = r.Status ?? "DNF";

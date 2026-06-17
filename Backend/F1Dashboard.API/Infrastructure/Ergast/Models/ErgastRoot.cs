@@ -147,6 +147,9 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         [JsonPropertyName("status")]
         public required string Status { get; set; }
 
+        [JsonPropertyName("positionText")]
+        public string? PositionText { get; set; }  
+
         [JsonPropertyName("Driver")]
         public required ErgastDriver Driver { get; set; }
 

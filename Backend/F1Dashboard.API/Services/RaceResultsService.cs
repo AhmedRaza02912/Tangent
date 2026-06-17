@@ -31,29 +31,24 @@ public class RaceResultService
             {
                 return new List<RaceResultsDto>();
             }
-            return race.Results
-                .Where(r => r.Driver != null)
-                .Select(r =>
-                {
-                    string gap;
+           return race.Results
+            .Where(r => r.Driver != null)
+            .Select(r =>
+    {
+        string gap;
 
-                    if (r.Position == "1")
-                    {
-                        gap = "Winner";
-                    }
-                    else if (r.Time?.Time != null)
-                    {
-                        gap = r.Time.Time;
-                    }
-                    else if(r.Status == "Retired" && r.Time.Time == null)
-                    {
-                        gap = "Finished";
-                    }
-                    else
-                    {
-                        gap = r.Status ?? "DNF";
-                    }
-
+        if (r.Position == "1")
+        {
+            gap = "Winner";
+        }
+        else if (r.Time?.Time != null)
+        {
+            gap = r.Time.Time;
+        }
+        else
+        {
+            gap = r.Status;
+        }
                     return new RaceResultsDto
                     {
                         DriverId = r.Driver.DriverId,

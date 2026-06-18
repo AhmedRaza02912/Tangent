@@ -47,7 +47,7 @@ public class RaceResultService
         }
         else
         {
-            gap = r.Status;
+            gap = "DNF";
         }
                     return new RaceResultsDto
                     {

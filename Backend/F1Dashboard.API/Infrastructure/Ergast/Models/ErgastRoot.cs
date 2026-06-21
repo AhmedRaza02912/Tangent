@@ -101,7 +101,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public string? Time { get; set; }
 
         [JsonPropertyName("Circuit")]
-        public ErgastCircuit? Circuit { get; set; }
+        public required ErgastCircuit Circuit { get; set; }
         [JsonPropertyName("FirstPractice")]
         public ErgastSession? FirstPractice { get; set; }
 
@@ -180,7 +180,7 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
         public string CircuitName { get; set; } = string.Empty;
 
         [JsonPropertyName("Location")]
-        public ErgastLocation? Location { get; set; }
+        public required ErgastLocation Location { get; set; }
 
         [JsonPropertyName("circuitId")]
         public string CircuitId { get; set; } = string.Empty;

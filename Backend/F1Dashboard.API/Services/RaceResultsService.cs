@@ -47,7 +47,7 @@ public class RaceResultService
         }
         else
         {
-            gap = "DNF";
+            gap = "Retired";
         }
                     return new RaceResultsDto
                     {

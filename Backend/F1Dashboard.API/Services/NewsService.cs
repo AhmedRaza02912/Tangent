@@ -16,7 +16,7 @@ public class NewsService
 
     public async Task<string> GetF1NewsAsync()
     {
-        if(_cache.TryGetValue(CacheKey, out string cachedNews ))
+        if(_cache.TryGetValue(CacheKey, out string? cachedNews ))
         {
             return cachedNews;
         }

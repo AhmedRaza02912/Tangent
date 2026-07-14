@@ -27,31 +27,72 @@
 /* Driver images — tall rectangular */
 .h2h-driver {
   flex-shrink: 0;
-  width: 160px;
+  position: relative;
+  width: 150px;
   height: 160px;
-  border-radius: 12px;
+  border-radius: 15% 2%;
   overflow: hidden;
- box-shadow:
-    0 0 8px rgba(22, 89, 191, 0.9),   /* blue glow */
-    0 0 18px rgba(243, 233, 174, 0.8);   /* golden glow */
+  background-color: #0b1426;
+ /* box-shadow: */
+    /*0 0 8px rgba(22, 89, 191, 0.9),   /* blue glow */
+    /*0 0 18px rgba(243, 233, 174, 0.8); */  /* golden glow */
+
+  border: 5px solid #273228;
+
+  box-shadow: 
+    /* Inner dark gap right inside the border */
+    inset 0 0 0 2px #421a06, 
+    inset 0 0 0 4px #121111; 
+    
+
 }
 
-.h2h-driver img {
+.h2h-driver-image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
+
+  transform-origin: bottom center;
+  transition: transform 0.3s ease; 
+  position: relative;
+  z-index: 1;
  
 }
 
-.h2h-driver--left img {
-  object-position: right top;
-   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
+.h2h-driver-position {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 5px 8px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #f4f7ff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(8, 12, 28, 0.34);
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  border-radius: 10px 10px 0 0;
 }
 
-.h2h-driver--right img {
+.h2h-driver--left .h2h-driver-image {
   object-position: right top;
-   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
+   /* background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%); */
+}
+
+.h2h-driver--right .h2h-driver-image {
+  object-position: right top;
+   /* background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%); */
 }
 
 .driver-placeholder {

@@ -8,6 +8,7 @@ export default function HeadToHead() {
   const [driverA, setDriverA] = useState("DriverA");
   const [driverB, setDriverB] = useState("DriverB");
   const [stats, setStats] = useState(null);
+  const [positions, setPositions] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -22,6 +23,23 @@ export default function HeadToHead() {
       .then((data) => { setStats(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, [driverA, driverB]);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/f1/drivers/standings`)
+      .then((res) => res.json())
+      .then((data) => {
+        const nextPositions = {};
+
+        data.forEach((driver) => {
+          nextPositions[driver.imageKey] = driver.position;
+        });
+
+        setPositions(nextPositions);
+      })
+      .catch(() => {
+        setPositions({});
+      });
+  }, []);
 
   return (
     <div className="driver-standings-card">
@@ -38,7 +56,7 @@ export default function HeadToHead() {
                 <option key={d} value={d}>{d}</option>
               ))}
           </select>
-          <DriverAvatar driver={driverA} side="left" />
+          <DriverAvatar driver={driverA} side="left" position={positions[driverA]} />
         </div>
 
         <div className="h2h-stats">
@@ -61,18 +79,23 @@ export default function HeadToHead() {
                 <option key={d} value={d}>{d}</option>
               ))}
           </select>
-          <DriverAvatar driver={driverB} side="right" />
+          <DriverAvatar driver={driverB} side="right" position={positions[driverB]} />
         </div>
       </div>
     </div>
   );
 }
 
-function DriverAvatar({ driver, side }) {
+function DriverAvatar({ driver, side, position }) {
   return (
     <div className={`h2h-driver h2h-driver--${side}`}>
       {driverImages[driver] ? (
-        <img src={driverImages[driver]} alt={driver} />
+        <>
+          <img className="h2h-driver-image" src={driverImages[driver]} alt={driver} />
+          {position != null && (
+            <div className="h2h-driver-position">P{position} in championship</div>
+          )}
+        </>
       ) : (
         <div className="driver-placeholder">{driver.charAt(0)}</div>
       )}

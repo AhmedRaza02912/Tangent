@@ -72,7 +72,7 @@ export default function DriverStandings() {
               <tr key={driver.imageKey || index}>
                 <td className="driver-cell">
                   {driverImages[driver.imageKey] ? (
-                    <img src={driverImages[driver.imageKey]} alt={driver.name} />
+                    <img loading="lazy"src={driverImages[driver.imageKey]} alt={driver.name} />
                   ) : (
                     <div className="driver-placeholder">{driver.name.charAt(0)}</div>
                   )}

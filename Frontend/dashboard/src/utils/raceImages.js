@@ -49,7 +49,7 @@ const raceImages = {
   "losail": qatar,                 
   "yas_marina": abudhabi,          
   "jeddah": saudiarabia,           
-  "madrid": madrid,                
+  "madring": madrid,                
 };
 
 export default raceImages;

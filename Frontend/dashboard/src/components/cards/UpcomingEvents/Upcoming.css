@@ -14,9 +14,8 @@
 }
 
 .upcoming-races-flex {
-display: flex;
-flex: 1 1 0;
-justify-content: center;
+  display: flex;
+  width: 100%;
   gap: 14px;
 }
 
@@ -27,6 +26,8 @@ justify-content: center;
 }
 
 .race-card {
+  flex: 1 1 0;
+  min-width: 0;
   background: rgba(12, 18, 48, 0.8);
   border-radius: 12px;
   overflow: hidden;

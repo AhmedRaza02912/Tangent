@@ -121,9 +121,10 @@
   background: rgba(20, 20, 40, 0.95);
   border-radius: 16px;
   padding: 16px 14px;
+  max-height: 670px;
+  overflow: hidden;
 
   filter: drop-shadow(2px 2px 5px black);
-  
 }
 .news-image {
   width: 70px; 

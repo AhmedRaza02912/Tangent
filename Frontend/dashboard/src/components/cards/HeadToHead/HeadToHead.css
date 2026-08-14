@@ -1,8 +1,9 @@
+/* ── Side columns ── */
 .h2h-side {
-  width: 160px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 0 0 160px;
 }
 
 .h2h-side select {
@@ -16,7 +17,7 @@
   cursor: pointer;
 }
 
-/* Main 3-column layout */
+/* ── Main 3-column layout ── */
 .h2h-main {
   display: flex;
   align-items: flex-start;
@@ -24,36 +25,61 @@
   gap: 16px;
 }
 
-/* Driver images — tall rectangular */
+/* ── Driver card: tall, fills width, no container box ── */
 .h2h-driver {
-  flex-shrink: 0;
-  width: 160px;
+  position: relative;
+  width: 100%;
   height: 160px;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
- box-shadow:
-    0 0 8px rgba(22, 89, 191, 0.9),   /* blue glow */
-    0 0 18px rgba(243, 233, 174, 0.8);   /* golden glow */
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .h2h-driver img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
- 
+  object-position: top center;
+  display: block;
 }
 
-.h2h-driver--left img {
-  object-position: right top;
-   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
+/* ── Gradient overlay at the bottom ── */
+.h2h-driver-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 10px 10px;
+  background: linear-gradient(to top, rgba(4, 8, 30, 0.95) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
-.h2h-driver--right img {
-  object-position: right top;
-   background: linear-gradient(to top, rgba(5, 10, 35, 0.95) 0%, transparent 100%);
+.h2h-driver-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.h2h-driver-team {
+  font-size: 10px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Placeholder when no image */
 .driver-placeholder {
   width: 100%;
   height: 100%;
@@ -65,13 +91,13 @@
   background: #0c1230;
 }
 
-/* Center stats column */
+/* ── Center stats column ── */
 .h2h-stats {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-top: 40px;
+  padding-top: 36px;
 }
 
 .comparison-row {
@@ -177,6 +203,7 @@
   }
 
   .h2h-side {
+    flex: 0 0 auto;
     width: 100%;
   }
 
@@ -185,7 +212,6 @@
   }
 
   .h2h-driver {
-    width: 100%;
     height: 170px;
   }
 

@@ -4,6 +4,34 @@ import "./HeadToHead.css";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
 
+// Display name + team for overlay — keyed by driverImages key
+const driverMeta = {
+  DriverA:         { name: "Driver A",          team: "" },
+  DriverB:         { name: "Driver B",          team: "" },
+  max_verstappen:  { name: "Max Verstappen",     team: "Oracle Red Bull Racing" },
+  hamilton:        { name: "Lewis Hamilton",     team: "Scuderia Ferrari" },
+  leclerc:         { name: "Charles Leclerc",   team: "Scuderia Ferrari" },
+  alonso:          { name: "Fernando Alonso",   team: "Aston Martin" },
+  bortoleto:       { name: "Gabriel Bortoleto", team: "Stake F1 Team" },
+  sainz:           { name: "Carlos Sainz",      team: "Williams Racing" },
+  colapinto:       { name: "Franco Colapinto",  team: "Alpine F1 Team" },
+  bottas:          { name: "Valtteri Bottas",   team: "Stake F1 Team" },
+  antonelli:       { name: "Kimi Antonelli",    team: "Mercedes-AMG" },
+  bearman:         { name: "Ollie Bearman",     team: "Haas F1 Team" },
+  gasly:           { name: "Pierre Gasly",      team: "Alpine F1 Team" },
+  hadjar:          { name: "Isack Hadjar",      team: "Racing Bulls" },
+  lawson:          { name: "Liam Lawson",       team: "Oracle Red Bull Racing" },
+  norris:          { name: "Lando Norris",      team: "McLaren F1 Team" },
+  ocon:            { name: "Esteban Ocon",      team: "Haas F1 Team" },
+  perez:           { name: "Sergio Perez",      team: "Oracle Red Bull Racing" },
+  piastri:         { name: "Oscar Piastri",     team: "McLaren F1 Team" },
+  russell:         { name: "George Russell",    team: "Mercedes-AMG" },
+  stroll:          { name: "Lance Stroll",      team: "Aston Martin" },
+  albon:           { name: "Alexander Albon",   team: "Williams Racing" },
+  hulkenberg:      { name: "Nico Hülkenberg",   team: "Haas F1 Team" },
+  arvid_lindblad:  { name: "Arvid Lindblad",   team: "Racing Bulls" },
+};
+
 export default function HeadToHead() {
   const [driverA, setDriverA] = useState("DriverA");
   const [driverB, setDriverB] = useState("DriverB");
@@ -69,6 +97,7 @@ export default function HeadToHead() {
 }
 
 function DriverAvatar({ driver, side }) {
+  const meta = driverMeta[driver] ?? { name: driver, team: "" };
   return (
     <div className={`h2h-driver h2h-driver--${side}`}>
       {driverImages[driver] ? (
@@ -76,6 +105,10 @@ function DriverAvatar({ driver, side }) {
       ) : (
         <div className="driver-placeholder">{driver.charAt(0)}</div>
       )}
+      <div className="h2h-driver-info">
+        <p className="h2h-driver-name">{meta.name}</p>
+        {meta.team && <p className="h2h-driver-team">{meta.team}</p>}
+      </div>
     </div>
   );
 }

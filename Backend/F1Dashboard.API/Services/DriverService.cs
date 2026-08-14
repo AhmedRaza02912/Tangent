@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using F1Dashboard.API.DTOs;
 using F1Dashboard.Api.Infrastructure.Ergast;
 using F1Dashboard.Api.Infrastructure.Ergast.Models;
@@ -28,6 +28,9 @@ public class DriverService
         var standings = root?.MRData?.StandingsTable?.StandingsLists?[0]?.DriverStandings;
         var poles = await _qualifyingStats.GetPolesAsync();
         var dnfs = await _driverStatsService.GetDnfsAsync();
+        // Wins are computed from race results directly to exclude sprint wins.
+        // The Ergast driverStandings `wins` field bundles sprint wins in some seasons.
+        var raceWins = await _driverStatsService.GetRaceWinsAsync();
 
 
         if (standings == null || standings.Count == 0)
@@ -39,7 +42,7 @@ public class DriverService
             {
                 Name = $"{s.Driver.GivenName} {s.Driver.FamilyName}",
                 Points = ParseOrZero(s.Points),
-                Wins = ParseOrZero(s.Wins),
+                Wins = raceWins.GetValueOrDefault(s.Driver.DriverId, 0),
                 Poles = poles.GetValueOrDefault(s.Driver.DriverId, 0),
                 Dnfs = dnfs.GetValueOrDefault(s.Driver.DriverId, 0),
                 ImageKey = s.Driver.DriverId

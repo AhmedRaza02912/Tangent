@@ -41,13 +41,20 @@ public class RaceResultService
         {
             gap = "Winner";
         }
-        else if (r.Time?.Time != null)
+        else if (!string.IsNullOrEmpty(r.Time?.Time))
         {
             gap = r.Time.Time;
         }
+        else if (r.PositionText == "R")
+        {
+            // positionText "R" = did not finish / retired
+            gap = "Retired";
+        }
         else
         {
-            gap = "Retired";
+            // Classified as Finished (completed enough % of race distance)
+            // but no time recorded (e.g. crashed near end, still given a position)
+            gap = "Finished";
         }
                     return new RaceResultsDto
                     {

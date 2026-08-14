@@ -1,0 +1,6 @@
+# Core build outputs
+bin/
+obj/
+
+# Node dependencies
+node_modules/

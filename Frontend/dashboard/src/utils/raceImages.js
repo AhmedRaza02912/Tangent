@@ -22,6 +22,7 @@ import qatar from "../assets/Races/Qatar.webp";
 import singapore from "../assets/Races/Singapore.avif";
 import spain from "../assets/Races/Spain.avif";
 import saudiarabia from "../assets/Races/Saudi.avif"; 
+import sepang from "../assets/Races/Sepang.jpg";
 
 const raceImages = {
   // circuitId 
@@ -49,7 +50,8 @@ const raceImages = {
   "losail": qatar,                 
   "yas_marina": abudhabi,          
   "jeddah": saudiarabia,           
-  "madring": madrid,                
+  "madring": madrid,   
+  "sepang": sepang             
 };
 
 export default raceImages;

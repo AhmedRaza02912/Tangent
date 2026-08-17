@@ -27,10 +27,12 @@ public class DriverService
         var root = JsonSerializer.Deserialize<ErgastRoot>(json);
         var standings = root?.MRData?.StandingsTable?.StandingsLists?[0]?.DriverStandings;
         var poles = await _qualifyingStats.GetPolesAsync();
-        var dnfs = await _driverStatsService.GetDnfsAsync();
-        // Wins are computed from race results directly to exclude sprint wins.
-        // The Ergast driverStandings `wins` field bundles sprint wins in some seasons.
-        var raceWins = await _driverStatsService.GetRaceWinsAsync();
+        // Fetch all race results ONCE and pass to both stat methods.
+        // Previously each method independently ran 9 paginated HTTP calls (242 rows ÷ 30/page),
+        // totalling 18 sequential requests which caused timeouts.
+        var allRaces = await _ergastClient.GetAllRacesPaginatedAsync();
+        var dnfs     = await _driverStatsService.GetDnfsAsync(allRaces);
+        var raceWins = await _driverStatsService.GetRaceWinsAsync(allRaces);
 
 
         if (standings == null || standings.Count == 0)

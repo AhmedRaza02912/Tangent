@@ -9,6 +9,16 @@ namespace F1Dashboard.Api.Infrastructure.Ergast.Models
 
     public class ErgastMrData
     {
+        // Pagination metadata returned by every Ergast/Jolpica response
+        [JsonPropertyName("total")]
+        public string? Total { get; set; }
+
+        [JsonPropertyName("limit")]
+        public string? Limit { get; set; }
+
+        [JsonPropertyName("offset")]
+        public string? Offset { get; set; }
+
         [JsonPropertyName("StandingsTable")]
         public ErgastStandingsTable? StandingsTable { get; set; }
 

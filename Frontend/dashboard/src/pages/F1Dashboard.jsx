@@ -6,6 +6,7 @@ import Upcoming from "../components/cards/UpcomingEvents/Upcoming.jsx";
 import LatestNews from "../components/cards/LatestNewsCard/NewsCard.jsx";
 import Results from "../components/cards/Results/Results.jsx";
 import HeadToHead  from "../components/cards/HeadToHead/HeadToHead.jsx";
+import RaceFinishGraph from "../components/cards/RaceFinishGraph/RaceFinishGraph.jsx";
 import "./Dashboard.css";
 
 export default function Dashboard({ activeSeries, onSeriesChange }) {
@@ -40,9 +41,13 @@ export default function Dashboard({ activeSeries, onSeriesChange }) {
               <HeadToHead />
             </div>
         </div>
+        <div className="dashboard-graph-row">
+          <RaceFinishGraph />
+        </div>
         <div className="dashboard-bottom-row">
           <Upcoming />
         </div>
+        
       </div>
     </div>
   );

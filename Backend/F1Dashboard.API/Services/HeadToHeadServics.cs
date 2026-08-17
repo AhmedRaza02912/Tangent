@@ -40,13 +40,14 @@ public class HeadToHeadService
 
     private async Task<(int a, int b)> CompareRace(string driverA, string driverB)
     {
-        var json = await _ergast.GetRaceResultsRawAsync();
-        var root = JsonSerializer.Deserialize<ErgastRoot>(json);
+        // GetAllRacesPaginatedAsync pages through the Jolpica API 100 rows at
+        // a time to work around the server-side row cap (~200 rows = ~10 races).
+        var races = await _ergast.GetAllRacesPaginatedAsync();
 
         int aAhead = 0;
         int bAhead = 0;
 
-        foreach(var race in root?.MRData?.RaceTable?.Races ?? [])
+        foreach(var race in races)
         {
             var results = race.Results;
             if (results == null) continue;

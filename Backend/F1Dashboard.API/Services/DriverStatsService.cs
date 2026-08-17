@@ -17,24 +17,23 @@ public class DriverStatsService
     // GetDnfsAsync and GetRaceWinsAsync to avoid duplicate HTTP calls.
     private async Task<List<ErgastRace>?> GetAllRaceResultsAsync()
     {
-        var json = await _ergast.GetRaceResultsRawAsync();
-        var root = JsonSerializer.Deserialize<ErgastRoot>(json);
-        return root?.MRData?.RaceTable?.Races;
+        // GetAllRacesPaginatedAsync pages through the Jolpica API 100 rows at
+        // a time to work around the server-side row cap (~200 rows = ~10 races).
+        return await _ergast.GetAllRacesPaginatedAsync();
     }
 
     public async Task<Dictionary<string, int>> GetDnfsAsync()
+        => GetDnfs(await GetAllRaceResultsAsync() ?? []);
+
+    public Task<Dictionary<string, int>> GetDnfsAsync(List<ErgastRace> races)
+        => Task.FromResult(GetDnfs(races));
+
+    private static Dictionary<string, int> GetDnfs(List<ErgastRace> races)
     {
-        var races = await GetAllRaceResultsAsync();
         var dnfs = new Dictionary<string, int>();
-
-        if (races == null)
-            return dnfs;
-
         foreach (var race in races)
         {
-            if (race.Results == null)
-                continue;
-
+            if (race.Results == null) continue;
             foreach (var result in race.Results)
             {
                 // positionText "R" is the authoritative Ergast signal for a DNF.
@@ -47,7 +46,6 @@ public class DriverStatsService
                 }
             }
         }
-
         return dnfs;
     }
 
@@ -57,18 +55,17 @@ public class DriverStatsService
     /// driverStandings `wins` field incorrectly bundles in some seasons.
     /// </summary>
     public async Task<Dictionary<string, int>> GetRaceWinsAsync()
+        => GetRaceWins(await GetAllRaceResultsAsync() ?? []);
+
+    public Task<Dictionary<string, int>> GetRaceWinsAsync(List<ErgastRace> races)
+        => Task.FromResult(GetRaceWins(races));
+
+    private static Dictionary<string, int> GetRaceWins(List<ErgastRace> races)
     {
-        var races = await GetAllRaceResultsAsync();
         var wins = new Dictionary<string, int>();
-
-        if (races == null)
-            return wins;
-
         foreach (var race in races)
         {
-            if (race.Results == null)
-                continue;
-
+            if (race.Results == null) continue;
             var winner = race.Results.FirstOrDefault(r => r.Position == "1");
             if (winner != null)
             {
@@ -76,9 +73,6 @@ public class DriverStatsService
                 wins[driverId] = wins.GetValueOrDefault(driverId, 0) + 1;
             }
         }
-
         return wins;
-
-        
     }
 }

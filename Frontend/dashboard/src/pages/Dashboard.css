@@ -82,6 +82,11 @@
   grid-row: 3;
 }
 
+.dashboard-graph-row {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+
 .scrollable {
   overflow-y: auto;
 }

@@ -32,6 +32,7 @@ builder.Services.AddScoped<RaceResultService>();
 builder.Services.AddScoped<SprintStatsService>();
 builder.Services.AddScoped<UpcomingRacesService>();
 builder.Services.AddScoped<RaceCalendarService>();
+builder.Services.AddScoped<DriverPositionHistoryService>();
 
 var allowedOrigins = builder.Configuration["AllowedOrigins"]?.Split(",")
     ?? new[] { "http://localhost:5173" };

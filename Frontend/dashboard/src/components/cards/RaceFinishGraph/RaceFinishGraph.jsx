@@ -65,7 +65,7 @@ function getTeamColor(constructorId) {
 const TOOLTIP_NONE = { visible: false };
 
 export default function RaceFinishGraph() {
-  const [selectedDriverIds, setSelectedDriverIds] = useState(["max_verstappen"]);
+  const [selectedDriverIds, setSelectedDriverIds] = useState([]);
   const [driverData, setDriverData]               = useState([]);
   const [loading, setLoading]                     = useState(false);
   const [tooltip, setTooltip]                     = useState(TOOLTIP_NONE);
@@ -75,20 +75,30 @@ export default function RaceFinishGraph() {
 
   /* ── Fetch whenever selectedDriverIds changes ── */
   useEffect(() => {
-    if (selectedDriverIds.length === 0) { setDriverData([]); return; }
+    if (selectedDriverIds.length === 0) {
+      setDriverData([]);
+      setLoading(false);
+      return;
+    }
+
+    const controller = new AbortController();
     setLoading(true);
     const params = selectedDriverIds.map(id => `ids=${encodeURIComponent(id)}`).join("&");
-    fetch(`${API_BASE_URL}/api/f1/drivers/position-history?${params}`)
+    fetch(`${API_BASE_URL}/api/f1/drivers/position-history?${params}`, { signal: controller.signal })
       .then(r => r.json())
       .then(data => { setDriverData(data); setLoading(false); })
-      .catch(() => setLoading(false));
+      .catch((err) => {
+        if (err.name !== "AbortError") setLoading(false);
+      });
+
+    return () => controller.abort();
   }, [selectedDriverIds]);
 
   /* ── Draw canvas ── */
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    if (!canvas || !container || driverData.length === 0) return;
+    if (!canvas || !container) return;
 
     const dpr    = window.devicePixelRatio || 1;
     const W      = container.clientWidth;
@@ -101,6 +111,9 @@ export default function RaceFinishGraph() {
     const ctx = canvas.getContext("2d");
     ctx.scale(dpr, dpr);
     ctx.clearRect(0, 0, W, H);
+    canvas._dots = [];
+
+    if (driverData.length === 0) return;
 
     const PAD_TOP    = 24;
     const PAD_BOTTOM = 52;
@@ -170,7 +183,6 @@ export default function RaceFinishGraph() {
 
     /* ── Per-driver: line then dots ── */
     // Store dot hit-areas for mousemove tooltip
-    canvas._dots = [];
 
     for (const driver of driverData) {
       const color = getTeamColor(driver.constructorId);

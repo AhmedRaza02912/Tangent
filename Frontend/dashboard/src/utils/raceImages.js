@@ -11,7 +11,7 @@ import brazil from "../assets/Races/Brazil.png";
 import canada from "../assets/Races/Canada.avif";
 import cota from "../assets/Races/COTA.webp";
 import hungary from "../assets/Races/Hungary.jpg";
-import italy from "../assets/Races/Itlay.avif";
+import italy from "../assets/Races/Itlay.PNG";
 import japan from "../assets/Races/Japan.avif";
 import lasvegas from "../assets/Races/Las Vegas.png";
 import madrid from "../assets/Races/Madrid.webp";

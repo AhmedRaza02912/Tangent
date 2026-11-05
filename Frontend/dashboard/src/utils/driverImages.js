@@ -23,6 +23,7 @@ import stroll from "../assets/Drivers/stroll.png";
 import DriverA from "../assets/Drivers/DriverA.jpg";
 import DriverB from "../assets/Drivers/DriverB.jpg";
 import tsunoda from "../assets/Drivers/tsunoda.PNG";
+import hirakawa from "../assets/Drivers/hirakawa.png";
 export const driverImages = {
     "DriverA": DriverA,
     "DriverB": DriverB,
@@ -48,5 +49,6 @@ export const driverImages = {
     "albon": albon,
     "hulkenberg": hulkenberg,
     "arvid_lindblad": lindblad,
-    "tsunoda": tsunoda
+    "tsunoda": tsunoda,
+    "ryo_hirakawa": hirakawa
 }

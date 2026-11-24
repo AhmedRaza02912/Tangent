@@ -51,4 +51,5 @@ export const driverImages = {
     "arvid_lindblad": lindblad,
     "tsunoda": tsunoda,
     "hirakawa": hirakawa,
+    "rafael_camara": rafael_camara
 }

@@ -24,6 +24,7 @@ import DriverA from "../assets/Drivers/DriverA.jpg";
 import DriverB from "../assets/Drivers/DriverB.jpg";
 import tsunoda from "../assets/Drivers/tsunoda.PNG";
 import hirakawa from "../assets/Drivers/hirakawa.png";
+import rafael_camara from "../assets/Drivers/rafael_camara.PNG"
 export const driverImages = {
     "DriverA": DriverA,
     "DriverB": DriverB,

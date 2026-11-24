@@ -18,7 +18,7 @@ import madrid from "../assets/Races/Madrid.webp";
 import mexico from "../assets/Races/Mexico.jpg";
 import monaco from "../assets/Races/Monaco.jpg";
 import netherlands from "../assets/Races/Neatherlands.avif";
-import qatar from "../assets/Races/Qatar.webp";
+import qatar from "../assets/Races/Qatar.jpg";
 import singapore from "../assets/Races/Singapore.avif";
 import spain from "../assets/Races/Spain.avif";
 import saudiarabia from "../assets/Races/Saudi.avif"; 
